@@ -1,5 +1,10 @@
 //VARIABLES CLAVE
 
+
+
+
+
+
 // Empresa
 var Ptotal = 31684;
 var CostoMateriaPrima;
@@ -135,7 +140,7 @@ var Colab4 = {
     cantidad: 10,
     precio: 5460,
     costo: function cst() {
-        x = this.precio * this.cantidad
+        x = this.precio*this.cantidad
         return x;
     }
 
@@ -150,7 +155,7 @@ var Cost1 = {
     cantidad: Mtrabajo,
     precio: 689,
     costo: function cst() {
-        x = this.cantidad * this.precio
+        x = this.cantidad*this.precio
     }
 
 }
@@ -162,7 +167,8 @@ var Cost1 = {
     cantidad: Mtrabajo,
     precio: 689,
     costo: function cst() {
-        x = this.cantidad * this.precio
+        x = this.cantidad*this.precio
+        return x;
     }
 
 }
@@ -173,7 +179,8 @@ var Cost2 = {
     cantidad: Mtrabajo,
     precio: 1500,
     costo: function cst() {
-        x = this.cantidad * this.precio
+        x = this.cantidad*this.precio
+        return x;
     }
 
 }
@@ -184,7 +191,8 @@ var Cost3 = {
     cantidad: Mtrabajo,
     precio: 800,
     costo: function cst() {
-        x = this.cantidad * this.precio
+        x = this.cantidad*this.precio
+        return x;
     }
 
 }
@@ -195,7 +203,8 @@ var Cost4 = {
     cantidad: Mtrabajo,
     precio: 4000,
     costo: function cst() {
-        x = this.cantidad * this.precio
+        x = this.cantidad*this.precio
+        return x;
     }
 
 }
@@ -206,7 +215,8 @@ var Cost5 = {
     cantidad: Mtrabajo,
     precio: 2800,
     costo: function cst() {
-        x = this.cantidad * this.precio
+        x = this.cantidad*this.precio
+        return x;
     }
 
 }
@@ -216,7 +226,8 @@ var Cost6 = {
     cantidad: Mtrabajo,
     precio: 400,
     costo: function cst() {
-        x = this.cantidad * this.precio
+        x = this.cantidad*this.precio
+        return x;
     }
 
 }
@@ -513,7 +524,7 @@ function CreateCardCi() {
         var titulo = ArrNomCind[i],
             precio = CurrencyFormatted(ArrPreCind[i]),
             cantidad = ArrCantCind[i]
-        costo = CurrencyFormatted(ArrCostCind[i]);
+            costo = CurrencyFormatted(ArrCostCind[i]);
 
         $clone[i] = $cinds.clone();
         //$clone.push($mprimas.clone())
