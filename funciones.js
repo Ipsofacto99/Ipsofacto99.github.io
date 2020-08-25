@@ -5,6 +5,8 @@ var Ptotal = 31684;
 var CostoMateriaPrima;
 var CostoColaboradores;
 var CostoCostosIndirectos;
+var SumaColaboradores;
+var CostoBonosEmpleados;
 
 // Tiempo
 Mtrabajo = 1;
@@ -368,7 +370,8 @@ function SumarCostos() {
     CostoMateriaPrima = ArrCostMprim.reduce(getSum, 0);
     CostoColaboradores = ArrCostColab.reduce(getSum, 0);
     CostoCostosIndirectos = ArrCostCind.reduce(getSum, 0);
-
+    SumaColaboradores = ArrCantColab.reduce(getSum, 0);
+    CostoBonosEmpleados = Ptotal*2*SumaColaboradores;
 }
 
 
@@ -476,6 +479,32 @@ function CreateCardCb() {
     return false;
 }
 
+function CreateCardCbBonos() {
+
+    
+        var titulo = "Bonos Empleados",
+            precio = "2 pesos por cupcake",
+            cantidad = SumaColaboradores,
+        costo = CurrencyFormatted(CostoBonosEmpleados);
+
+        $clone[i] = $colabs.clone();
+        $clone[i].find('#cb-titulo')
+            .text(titulo)
+        $clone[i].find('#cb-precio')
+            .text(precio)
+        $clone[i].find('#cb-costo')
+            .text(CommaFormatted(costo))
+        $clone[i].find('#cb-cantidad')
+            .text(cantidad)
+        $clone[i].hide()
+        $cbcontainer.prepend($clone[i])
+        $clone[i].fadeIn()
+
+
+    
+    return false;
+}
+
 
 function CreateCardCi() {
 
@@ -516,4 +545,5 @@ function CreateCardCi() {
 $(".click-here").click(CreateCardMp);
 $(".click-here").click(CreateCardMpSum);
 $(".click-here").click(CreateCardCb);
+$(".click-here").click(CreateCardCbBonos);
 $(".click-here").click(CreateCardCi);
