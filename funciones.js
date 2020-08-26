@@ -1,9 +1,11 @@
 //VARIABLES CLAVE
-
-
-
-
-
+contmp = 0
+contmpsum = 0
+contcb = 0
+contcbsum = 0
+contcbbonos = 0
+contci = 0
+contcisum = 0
 
 // Empresa
 var Ptotal = 31684;
@@ -263,6 +265,13 @@ var ArrCostCind = [];
 // LISTAS
 
 function HacerListasMp() {
+
+    ArrNomMprim = [];
+    ArrPreMprim = [];
+    ArrCantMprim = [];
+    ArrCostMprim = [];
+
+    
     for (i = 1; i < 8; i++) {
         Ncomp = "Mprima" + i + ".nombre"
         Pcomp = "Mprima" + i + ".precio"
@@ -274,9 +283,14 @@ function HacerListasMp() {
         ArrCostMprim.push(eval(COcomp))
 
     }
+
 }
 
 function HacerListasCb() {
+    ArrNomColab = [];
+    ArrPreColab = [];
+    ArrCantColab = [];
+    ArrCostColab = [];
     for (i = 1; i < 5; i++) {
         Ncomp2 = "Colab" + i + ".nombre"
         Pcomp2 = "Colab" + i + ".precio"
@@ -291,6 +305,10 @@ function HacerListasCb() {
 
 
 function HacerListasCI() {
+        ArrNomCind = [];
+        ArrPreCind = [];
+        ArrCantCind = [];
+        ArrCostCind = [];
     for (i = 1; i < 6; i++) {
         Ncomp3 = "Cost" + i + ".nombre"
         Pcomp3 = "Cost" + i + ".precio"
@@ -372,6 +390,11 @@ function CommaFormatted(amount) {
 
 // OPERACIONES
 
+function Cptotal(e){
+
+    Mprima1.precio = e
+}
+
 function getSum(total, num) {
     return total + Math.round(num);
 }
@@ -415,17 +438,14 @@ var $clone = [];
 
 // CONSTRUCTOR JQUERY
 function CreateCardMp() {
-
-    for (i = 0; i < ArrNomMprim.length; i++) {
-
+    $("#mp-container").empty();
+    HacerListasMp();
+   for (i = 0; i < ArrNomMprim.length; i++) {
         var titulo = ArrNomMprim[i],
             cantidad = CurrencyFormatted(ArrCantMprim[i]),
             precio = CurrencyFormatted(ArrPreMprim[i]),
             costo = CurrencyFormatted(ArrCostMprim[i]);
-
         $clone[i] = $mprimas.clone();
-        //$clone.push($mprimas.clone())
-
         $clone[i].find('#mp-titulo')
             .text(titulo)
         $clone[i].find('#mp-precio')
@@ -437,42 +457,37 @@ function CreateCardMp() {
         $clone[i].hide()
         $mpcontainer.prepend($clone[i])
         $clone[i].fadeIn()
-
+        
 
     }
+    CreateCardMpSum();
     return false;
 }
 
-function CreateCardMpSum() {        
+function CreateCardMpSum() {
         costo = CurrencyFormatted(CostoMateriaPrima);
         $clone[i] = $mprimassum.clone();        
         $clone[i].find('#mp-costo-sum')
             .text(CommaFormatted(costo))
         $clone[i].find('#mp-list-sum')
-            .text(ArrNomMprim.toString())
-        $clone[i].hide()
-        $mpcontainer.prepend($clone[i])
-        $clone[i].fadeIn()
-
-
-    
+            .text(ArrNomMprim.toString())   
+                contmpsum += 1
+                $clone[i].hide()
+                $mpcontainer.prepend($clone[i])
+                $clone[i].fadeIn()
     return false;
 }
 
 
 function CreateCardCb() {
-
+    $("#cb-container").empty();
+    HacerListasCb();
     for (i = 0; i < ArrNomColab.length; i++) {
-
         var titulo = ArrNomColab[i],
             precio = CurrencyFormatted(ArrPreColab[i]),
             cantidad = ArrCantColab[i]
         costo = CurrencyFormatted(ArrCostColab[i]);
-
         $clone[i] = $colabs.clone();
-        //$clone.push($mprimas.clone())
-
-
         $clone[i].find('#cb-titulo')
             .text(titulo)
         $clone[i].find('#cb-precio')
@@ -485,19 +500,16 @@ function CreateCardCb() {
         $cbcontainer.prepend($clone[i])
         $clone[i].fadeIn()
 
-
     }
+    CreateCardCbBonos();
     return false;
 }
 
-function CreateCardCbBonos() {
-
-    
+function CreateCardCbBonos() {    
         var titulo = "Bonos Empleados",
             precio = "2 pesos por cupcake",
             cantidad = SumaColaboradores,
         costo = CurrencyFormatted(CostoBonosEmpleados);
-
         $clone[i] = $colabs.clone();
         $clone[i].find('#cb-titulo')
             .text(titulo)
@@ -518,18 +530,16 @@ function CreateCardCbBonos() {
 
 
 function CreateCardCi() {
-
+    $("#ci-container").empty();
+    HacerListasCI();
     for (i = 0; i < ArrNomCind.length; i++) {
 
         var titulo = ArrNomCind[i],
             precio = CurrencyFormatted(ArrPreCind[i]),
             cantidad = ArrCantCind[i]
             costo = CurrencyFormatted(ArrCostCind[i]);
-
         $clone[i] = $cinds.clone();
         //$clone.push($mprimas.clone())
-
-
         $clone[i].find('#ci-titulo')
             .text(titulo)
         $clone[i].find('#ci-precio')
@@ -553,8 +563,6 @@ function CreateCardCi() {
 
 //EVENTOS
 
-$(".click-here").click(CreateCardMp);
-$(".click-here").click(CreateCardMpSum);
-$(".click-here").click(CreateCardCb);
-$(".click-here").click(CreateCardCbBonos);
-$(".click-here").click(CreateCardCi);
+$("#btn-mp").click(CreateCardMp);
+$("#btn-cb").click(CreateCardCb);
+$("#btn-ci").click(CreateCardCi);

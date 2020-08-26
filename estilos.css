@@ -307,7 +307,7 @@ box-shadow: none;
 .card-title{
 
     font-family: Helvetica;
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 400;
     color: rgba(0, 0, 0, 0.75);
     text-align: center;
@@ -315,26 +315,27 @@ box-shadow: none;
     letter-spacing: 2.5px;
     display: flex;
     align-items: baseline;
-    margin: 5px;
-    padding: 5px;
+    margin: 3px;
+    padding: 0px;
     justify-content: center;
 }
 
-.click-here{
+.click-here, .btn{
 
     
-    font-size: 12px;
+
     font-weight: 400;
     color: rgba(0, 0, 0, 0.75);
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 2.5px;
+    border:solid 0px;
 }
 
 .money-sign{
 
     font-family: Helvetica;
-    font-size: 22px;
+    font-size: 18px;
     font-weight: 400;
     color: rgba(0, 0, 0, 0.75);
     text-align: center;
