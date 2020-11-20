@@ -1,163 +1,241 @@
-<!DOCTYPE html>
+<!doctype html>
+<!--
+  Material Design Lite
+  Copyright 2015 Google Inc. All rights reserved.
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+      https://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License
+-->
 <html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <title>Electricidad y Magnetismo</title>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Sistema Costos y Presupuestos</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="images/android-desktop.png">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Material Design Lite">
+    <link rel="apple-touch-icon-precomposed" href="images/ios-desktop.png">
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
+    <meta name="msapplication-TileColor" content="#3372DF">
+
+    <link rel="shortcut icon" href="images/favicon.png">
+
+    <!-- SEO: If your mobile URL is different from the desktop URL, add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones -->
+    <!--
+    <link rel="canonical" href="http://www.example.com/">
+    -->
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
-    <link rel="stylesheet" id="wp-block-library-css"
-        href="https://cdn.shopify.com/s/files/1/1292/2935/files/blogstyle.css?10498" type="text/css" media="all">
-    <link rel="stylesheet" href="https://cdn.shopify.com/s/files/1/1292/2935/files/animate.css?10481" type="text/css"
-        media="all">
-    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
-    <meta name="theme-color" content="#000">
-    <link rel="stylesheet" type="text/css" href="estilos.css" media="screen" />
-</head>
-
-
-
-
-<body onload="HacerListas(); SumarCostos()">
-    <div class="mdl-layout mdl-js-layout">
-        <header class="mdl-layout__header mdl-layout__header--scroll">
-            <div class="mdl-layout__header-row">
-                <div class="mdl-layout-spacer"></div>
-                <nav class="mdl-navigation">
-                    <a class="mdl-navigation__link" href="">Materias Primas</a>
-                    <a class="mdl-navigation__link" href="armario.html">Colaboradores</a>
-                    <a class="mdl-navigation__link" href="">Costos Indirectos</a>
-                    <a class="mdl-navigation__link" href="">Resultados</a>
-                </nav>
-            </div>
-        </header>
-
-        <div class="mdl-layout__drawer">
-            <nav class="mdl-navigation">
-                <a class="mdl-navigation__link" href="">Materias Primas</a>
-                    <a class="mdl-navigation__link" href="">Colaboradores</a>
-                    <a class="mdl-navigation__link" href="">Costos Indirectos</a>
-                    <a class="mdl-navigation__link" href="">Resultados</a>
-            </nav>
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.red-deep_orange.min.css" />
+    <link rel="stylesheet" href="styles.css">
+    <style>
+    #view-source {
+      position: fixed;
+      display: block; 
+      right: 0;
+      bottom: 0;
+      margin-right: 40px;
+      margin-bottom: 40px;
+      z-index: 900;
+    }
+    </style>
+  </head>
+  <body class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+      <header class="mdl-layout__header mdl-layout__header--scroll mdl-color--primary">
+        <div class="mdl-layout--large-screen-only mdl-layout__header-row">
         </div>
-        <main class="mdl-layout__content">
-            <div class="page-content">
-
-                <div class="divisor"></div>
-
-                <div class="jumbotron container animated fadeIn main-card" style="padding: 7%;">
-                    <h1 class="display-4">Sistema de Costos y Presupuestos</h1>
-                    <p class="lead">Sistema en desarrollo, favor de revisar despues del 25/08/2020, para ver completo</p>
-                </div>
-
-
-                
-                    <div class="jumbotron container animated fadeIn">
-                        <h1 class="display-4">Materias Primas</h1>
-                        <hr class="my-4">
-                        <p class="lead">Administra los materiales empleados en la producción y su costo</p>
-                        <p class="click-here"><button type="button" id="btn-mp" class="btn btn-secondary">Administrar materias primas</button></p>
-                    </div>
-                
-
-                <div class="container ">
-                    <div class="row" id="mp-container">
-                        <div id="mp-card" class="col-12 col-md-6 test">
-                            <div class="card  mb-3 ">
-                                <div  class="card-header"><span id="mp-titulo">Cera (350g)</span></div>
-                                <div class="card-body">
-                                    <h5  class="card-title"><p class="money-sign">PRECIO  $</p><span id="mp-precio">50.0</span></h5>
-                                    <h5  class="card-title"><p class="money-sign"> CANTIDAD: </p><span id="mp-cantidad">2</span></h5>
-                                    <h5  class="card-title"><p class="money-sign"> COSTO  $</p><span id="mp-costo">500.0</span></h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div id="mp-card-sum" class="col-12 col-md-12 test">
-                            <div class="card  mb-3 ">
-                                <div  class="card-header"><span id="mp-titulo-sum">COSTO TOTAL DE MATERIA PRIMA</span></div>
-                                <div class="card-body">
-                                    <h5  class="card-title" style="font-size: 10px;" ><p class="money-sign" style="font-size: 10px; display: flex;"> SUMA: </p><span id="mp-list-sum">a,b,c</span></h5>
-                                    <h5  class="card-title" ><p class="money-sign"> COSTO  $</p><span id="mp-costo-sum">500 </span></h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                    <div class="jumbotron container animated fadeIn">
-                        <h1 class="display-4">Colaboradores y Empleados</h1>
-                        <hr class="my-4">
-                        <p class="lead">Administra la cantidad y costo de tus colaboradores</p>
-                        <p class="click-here"><button id="btn-cb" type="button" class="btn btn-secondary">Administrar colaboradores</button></p>
-                    </div>
-            
-
-                <div class="container ">
-                    <div class="row" id="cb-container">
-                        <div id="cb-card" class="col-12 col-md-6 test">
-                            <div class="card  mb-3 ">
-                                <div  class="card-header"><span id="cb-titulo">Cera (350g)</span></div>
-                                <div class="card-body">
-                                    <h5  class="card-title"><p class="money-sign">PRECIO  $</p><span id="cb-precio">50.0</span></h5>
-                                    <h5  class="card-title"><p class="money-sign"> CANTIDAD: </p><span id="cb-cantidad">1</span></h5>
-                                    <h5  class="card-title"><p class="money-sign"> COSTO  $</p><span id="cb-costo">500.0</span></h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-             
-                    <div class="jumbotron container animated fadeIn">
-                        <h1 class="display-4">Costos Indirectos</h1>
-                        <hr class="my-4">
-                        <p class="lead">Administra los distintos costos operativos de tu empresa</p>
-                        <p class="click-here"><button type="button" id="btn-ci" class="btn btn-secondary">Administrar costos indirectos</button></p>
-                    </div>
-                
-
-
-                <div class="container ">
-                    <div class="row" id="ci-container">
-                        <div id="ci-card" class="col-12 col-md-6 test">
-                            <div class="card  mb-3 ">
-                                <div  class="card-header"><span id="ci-titulo">Cera (350g)</span></div>
-                                <div class="card-body">
-                                    <h5  class="card-title"><p class="money-sign">PRECIO  $</p><span id="ci-precio">50.0</span></h5>
-                                    <h5  class="card-title"><p class="money-sign"> CANTIDAD: </p><span id="ci-cantidad">2</span></h5>
-                                    <h5  class="card-title"><p class="money-sign"> COSTO  $</p><span id="ci-costo">500.0</span></h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-
-
-
-                <div class="divisor"></div>
-
-
-
-
+        <div class="mdl-layout--large-screen-only mdl-layout__header-row">
+          <h3>Dinámica Electricidad y Magnetismo</h3>
+        </div>
+        <div class="mdl-layout--large-screen-only mdl-layout__header-row">
+        </div>
+        <div class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--primary-dark">
+          <a href="" class="mdl-layout__tab">José Pablo Cisneros</a>
+          <a href="" class="mdl-layout__tab">Sofia Díaz</a>
+          <a href="" class="mdl-layout__tab">Regina Zuñiga</a>
+          <a href="" class="mdl-layout__tab">Mariela Camacho</a>
+        </div>
+      </header>
+      <main class="mdl-layout__content">
+        <div class="mdl-layout__tab-panel is-active" id="overview">
+          <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+            <header class="section__play-btn mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--4-col-phone mdl-color-text--white" style="background-color: #EAF3FA;">
+              <img src="7881.jpg" height="132px" alt="">
+            </header>
+            <div class="mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
+              <div class="mdl-card__supporting-text">
+                <h4>Dinámica Presentación GPS</h4>
+               El día de hoy aprenderemos sobre el "Global Positioning System" y como este ha evolucionado en la era digital. En esta dinámica mostraremos tu ubicación apartir de una triangulación 2D mediante el uso APIs.
+              </div>
+              <div class="mdl-card__actions">
+                <form action="#">
+                  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input class="mdl-textfield__input" type="text" id="nametag">
+                    <label class="mdl-textfield__label" for="sample2">Introduce tu nombre aquí</label>
+                  </div>
+                </form>
+              </div>
             </div>
-        </main>
+            
+          </section>
+          <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+            <div class="mdl-card mdl-cell mdl-cell--12-col">
+              <div class="mdl-card__supporting-text mdl-grid mdl-grid--no-spacing">
+                <h4 class="mdl-cell mdl-cell--12-col">Pasos a seguir</h4>
+                <div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
+                  <div class="section__circle-container__circle mdl-color--primary" style="background-image: url('uno.png'); background-size: contain;"></div>
+                </div>
+                <div class="section__text mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
+                  <h5>Encuentra tu "IP"</h5>
+                  Para realizar la dinámica necesitaremos acceso a tu dirección "IP" para obtenerla entrá a la siguiente página y copiala.        <a href="https://www.cual-es-mi-ip.net">  página para encontrar "IP"</a>.
+                </div>
+                <div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
+                  <div class="section__circle-container__circle mdl-color--primary" style="background-image: url('dos.png'); background-size: contain;"></div> 
+                </div>
+                <div class="section__text mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
+                  <h5>Pega tu dirección IP</h5>
+                 A continuación pega la dirección "IP" que acabas de copiar en la casilla que aparece debajo de esta tarjeta y presiona el boton
+                </div>
+                <div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
+                  <div class="section__circle-container__circle mdl-color--primary" style="background-image: url('tres.png'); background-size: contain;"></div>
+                </div>
+                <div class="section__text mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
+                  <h5>Descubre tu ubicación, Latitud, Longitud y región</h5>
+                 Aprende como los servicios de internet acceden a tu ubicación basados en un tu dirección "IP"
+                </div>
+              </div>
+              
+            </div>
+          </section>
+          <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+            <div class="mdl-card mdl-cell mdl-cell--12-col">
+              <div class="mdl-card__supporting-text">
+                <h4>Dirección IP</h4>
+                <form action="#">
+                  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input class="mdl-textfield__input" type="text" id="ipsearch">
+                    <label class="mdl-textfield__label" for="sample3">Introduce tu dirección IP aquí</label>
+                  </div>
+                </form>
+                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect"id="btnx">
+                 Enviar
+                </button>
+              </div>
+              <div class="mdl-card__actions">
+                <a href="#" class="mdl-button">Actualiza para ver las direcciones de tus amigos</a>
+              </div>
+            </div>
+          </section>
+          <section id="datas" class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+            <div class="mdl-card mdl-cell mdl-cell--12-col">
+              <div class="mdl-card__supporting-text">
+               
+                <h4 id="name">Nombre</h4>
+                
+                <style>
+                  .demo-list-three {
+                    width: 650px;
+                  }
+                  </style>
+
+                   <img id="flag" width="200px" src="" alt="">
+                   
+                  <ul class="demo-list-three mdl-list">
+                    <li class="mdl-list__item mdl-list__item--three-line">
+                      <span class="mdl-list__item-primary-content">
+                       
+                        <i class="material-icons mdl-list__item-avatar">location_on</i>
+                        <span>País</span>
+                        <span id="country" class="mdl-list__item-text-body">
+                          Error en la carga
+                        </span>
+                      </span>
+                      <span class="mdl-list__item-secondary-content">
+                        
+                      </span>
+                    </li>
+                    <li class="mdl-list__item mdl-list__item--three-line">
+                      <span class="mdl-list__item-primary-content">
+                        <i class="material-icons  mdl-list__item-avatar">person</i>
+                        <span >Ciudad</span>
+                        <span id="citi" class="mdl-list__item-text-body">
+                          Error en la carga
+                        </span>
+                      </span>
+                      <span class="mdl-list__item-secondary-content">
+                       
+                      </span>
+                    </li>
+                    <li class="mdl-list__item mdl-list__item--three-line">
+                      <span class="mdl-list__item-primary-content">
+                        <i class="material-icons  mdl-list__item-avatar">leak_add</i>
+                        <span >Latitud</span>
+                        <span id="lat" class="mdl-list__item-text-body">
+                          Error en la carga
+                        </span>
+                      </span>
+                      <span class="mdl-list__item-secondary-content">
+                        
+                      </span>
+                    </li>
+                    <li class="mdl-list__item mdl-list__item--three-line">
+                      <span class="mdl-list__item-primary-content">
+                        <i class="material-icons  mdl-list__item-avatar">leak_add</i>
+                        <span >Longitud</span>
+                        <span id="long" class="mdl-list__item-text-body">
+                          Error en la carga
+                        </span>
+                      </span>
+                      <span class="mdl-list__item-secondary-content">
+                       
+                      </span>
+                    </li>
+                  </ul>
+              </div>
+            </div>
+          </section>
+          <div id="metelos"></div>
+          <section class="section--footer mdl-grid">
+            
+          </section>
+        </div>
+        
+        <footer class="mdl-mega-footer">
+          <div class="mdl-mega-footer--middle-section">
+            
+          </div>
+          <div class="mdl-mega-footer--bottom-section">
+            <div class="mdl-logo">
+            Desarrollado Por : José Pablo Cisneros
+          
+        </footer>
+      </main>
     </div>
-
-
-
-
-
-</body>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="funciones.js"></script>
-
+    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-analytics.js"></script>
+    <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <script src="main.js"></script>
+  </body>
 </html>
