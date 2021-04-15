@@ -1,241 +1,150 @@
-<!doctype html>
-<!--
-  Material Design Lite
-  Copyright 2015 Google Inc. All rights reserved.
-
-  Licensed under the Apache License, Version 2.0 (the "License");
-  you may not use this file except in compliance with the License.
-  You may obtain a copy of the License at
-
-      https://www.apache.org/licenses/LICENSE-2.0
-
-  Unless required by applicable law or agreed to in writing, software
-  distributed under the License is distributed on an "AS IS" BASIS,
-  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-  See the License for the specific language governing permissions and
-  limitations under the License
--->
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <title>Electricidad y Magnetismo</title>
 
-    <!-- Add to homescreen for Chrome on Android -->
-    <meta name="mobile-web-app-capable" content="yes">
-    <link rel="icon" sizes="192x192" href="images/android-desktop.png">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sequence.js - Getting Started</title>
+  <link href="css/demo.css" rel="stylesheet" media="all">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+</head>
 
-    <!-- Add to homescreen for Safari on iOS -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="Material Design Lite">
-    <link rel="apple-touch-icon-precomposed" href="images/ios-desktop.png">
+<body>
+  <div class="cursor"></div>
+  <div id="sequence" class="seq">
+    <ul class="seq-canvas">
+      <li class="step1 valign">
 
-    <!-- Tile icon for Win8 (144x144 + tile color) -->
-    <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
-    <meta name="msapplication-TileColor" content="#3372DF">
+        <div data-seq class="box-step feature foto animate__animated animate__backInLeft">
 
-    <link rel="shortcut icon" href="images/favicon.png">
 
-    <!-- SEO: If your mobile URL is different from the desktop URL, add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones -->
-    <!--
-    <link rel="canonical" href="http://www.example.com/">
-    -->
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.red-deep_orange.min.css" />
-    <link rel="stylesheet" href="styles.css">
-    <style>
-    #view-source {
-      position: fixed;
-      display: block; 
-      right: 0;
-      bottom: 0;
-      margin-right: 40px;
-      margin-bottom: 40px;
-      z-index: 900;
-    }
-    </style>
-  </head>
-  <body class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
-    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-      <header class="mdl-layout__header mdl-layout__header--scroll mdl-color--primary">
-        <div class="mdl-layout--large-screen-only mdl-layout__header-row">
         </div>
-        <div class="mdl-layout--large-screen-only mdl-layout__header-row">
-          <h3>Dinámica Electricidad y Magnetismo</h3>
-        </div>
-        <div class="mdl-layout--large-screen-only mdl-layout__header-row">
-        </div>
-        <div class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--primary-dark">
-          <a href="" class="mdl-layout__tab">José Pablo Cisneros</a>
-          <a href="" class="mdl-layout__tab">Sofia Díaz</a>
-          <a href="" class="mdl-layout__tab">Regina Zuñiga</a>
-          <a href="" class="mdl-layout__tab">Mariela Camacho</a>
-        </div>
-      </header>
-      <main class="mdl-layout__content">
-        <div class="mdl-layout__tab-panel is-active" id="overview">
-          <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
-            <header class="section__play-btn mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--4-col-phone mdl-color-text--white" style="background-color: #EAF3FA;">
-              <img src="7881.jpg" height="132px" alt="">
-            </header>
-            <div class="mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
-              <div class="mdl-card__supporting-text">
-                <h4>Dinámica Presentación GPS</h4>
-               El día de hoy aprenderemos sobre el "Global Positioning System" y como este ha evolucionado en la era digital. En esta dinámica mostraremos tu ubicación apartir de una triangulación 2D mediante el uso APIs.
-              </div>
-              <div class="mdl-card__actions">
-                <form action="#">
-                  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                    <input class="mdl-textfield__input" type="text" id="nametag">
-                    <label class="mdl-textfield__label" for="sample2">Introduce tu nombre aquí</label>
-                  </div>
-                </form>
-              </div>
-            </div>
-            
-          </section>
-          <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
-            <div class="mdl-card mdl-cell mdl-cell--12-col">
-              <div class="mdl-card__supporting-text mdl-grid mdl-grid--no-spacing">
-                <h4 class="mdl-cell mdl-cell--12-col">Pasos a seguir</h4>
-                <div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
-                  <div class="section__circle-container__circle mdl-color--primary" style="background-image: url('uno.png'); background-size: contain;"></div>
-                </div>
-                <div class="section__text mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
-                  <h5>Encuentra tu "IP"</h5>
-                  Para realizar la dinámica necesitaremos acceso a tu dirección "IP" para obtenerla entrá a la siguiente página y copiala.        <a href="https://www.cual-es-mi-ip.net">  página para encontrar "IP"</a>.
-                </div>
-                <div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
-                  <div class="section__circle-container__circle mdl-color--primary" style="background-image: url('dos.png'); background-size: contain;"></div> 
-                </div>
-                <div class="section__text mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
-                  <h5>Pega tu dirección IP</h5>
-                 A continuación pega la dirección "IP" que acabas de copiar en la casilla que aparece debajo de esta tarjeta y presiona el boton
-                </div>
-                <div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
-                  <div class="section__circle-container__circle mdl-color--primary" style="background-image: url('tres.png'); background-size: contain;"></div>
-                </div>
-                <div class="section__text mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
-                  <h5>Descubre tu ubicación, Latitud, Longitud y región</h5>
-                 Aprende como los servicios de internet acceden a tu ubicación basados en un tu dirección "IP"
-                </div>
-              </div>
-              
-            </div>
-          </section>
-          <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
-            <div class="mdl-card mdl-cell mdl-cell--12-col">
-              <div class="mdl-card__supporting-text">
-                <h4>Dirección IP</h4>
-                <form action="#">
-                  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                    <input class="mdl-textfield__input" type="text" id="ipsearch">
-                    <label class="mdl-textfield__label" for="sample3">Introduce tu dirección IP aquí</label>
-                  </div>
-                </form>
-                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect"id="btnx">
-                 Enviar
-                </button>
-              </div>
-              <div class="mdl-card__actions">
-                <a href="https://ipsofacto99.github.io" class="mdl-button">Actualiza para ver las direcciones de tus amigos</a>
-              </div>
-            </div>
-          </section>
-          <section id="datas" class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
-            <div class="mdl-card mdl-cell mdl-cell--12-col">
-              <div class="mdl-card__supporting-text">
-               
-                <h4 id="name">Nombre</h4>
-                
-                <style>
-                  .demo-list-three {
-                    width: 650px;
-                  }
-                  </style>
 
-                   <img id="flag" width="200px" src="" alt="">
-                   
-                  <ul class="demo-list-three mdl-list">
-                    <li class="mdl-list__item mdl-list__item--three-line">
-                      <span class="mdl-list__item-primary-content">
-                       
-                        <i class="material-icons mdl-list__item-avatar">location_on</i>
-                        <span>País</span>
-                        <span id="country" class="mdl-list__item-text-body">
-                          Error en la carga
-                        </span>
-                      </span>
-                      <span class="mdl-list__item-secondary-content">
-                        
-                      </span>
-                    </li>
-                    <li class="mdl-list__item mdl-list__item--three-line">
-                      <span class="mdl-list__item-primary-content">
-                        <i class="material-icons  mdl-list__item-avatar">person</i>
-                        <span >Ciudad</span>
-                        <span id="citi" class="mdl-list__item-text-body">
-                          Error en la carga
-                        </span>
-                      </span>
-                      <span class="mdl-list__item-secondary-content">
-                       
-                      </span>
-                    </li>
-                    <li class="mdl-list__item mdl-list__item--three-line">
-                      <span class="mdl-list__item-primary-content">
-                        <i class="material-icons  mdl-list__item-avatar">leak_add</i>
-                        <span >Latitud</span>
-                        <span id="lat" class="mdl-list__item-text-body">
-                          Error en la carga
-                        </span>
-                      </span>
-                      <span class="mdl-list__item-secondary-content">
-                        
-                      </span>
-                    </li>
-                    <li class="mdl-list__item mdl-list__item--three-line">
-                      <span class="mdl-list__item-primary-content">
-                        <i class="material-icons  mdl-list__item-avatar">leak_add</i>
-                        <span >Longitud</span>
-                        <span id="long" class="mdl-list__item-text-body">
-                          Error en la carga
-                        </span>
-                      </span>
-                      <span class="mdl-list__item-secondary-content">
-                       
-                      </span>
-                    </li>
-                  </ul>
-              </div>
-            </div>
-          </section>
-          <div id="metelos"></div>
-          <section class="section--footer mdl-grid">
-            
-          </section>
+        <div data-seq class="box-step feature animate__animated animate__fadeInUp animate__slow">
+          <h2 data-seq class="title">Bienvenido a la familia <span class="logo-vianney ">Vianney</span></h2>
+          <h3 data-seq class="sub-title">Inicia tu propio negocio y alcanza tus metas</h3>
+
+
         </div>
-        
-        <footer class="mdl-mega-footer">
-          <div class="mdl-mega-footer--middle-section">
-            
-          </div>
-          <div class="mdl-mega-footer--bottom-section">
-            <div class="mdl-logo">
-            Desarrollado Por : José Pablo Cisneros
-          
-        </footer>
-      </main>
-    </div>
-    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-analytics.js"></script>
-    <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-    <script src="main.js"></script>
-  </body>
+
+      </li>
+      <li class="step2 valign">
+
+        <div data-seq class="box-step feature foto" style="background-image: url(https://i.ibb.co/gSXRPWq/video-preview.png); background-size: cover;">
+
+
+
+        </div>
+
+        <div data-seq class="box-step feature ">
+          <h2 data-seq class="title">Beneficios de afiliados</h2>
+          <div class="list-container" >
+          <h3 data-seq class="sub-title">-Membresía de por vida</h3>
+          <h3 data-seq class="sub-title">-Precios preferenciales</h3>
+          <h3 data-seq class="sub-title">-Pedidos en línea 24 horas</h3>
+          <h3 data-seq class="sub-title">-Acumula puntos por cada compra</h3>
+          <h3 data-seq class="sub-title">-Garantía de satisfacción</h3>
+          <h3 data-seq class="sub-title">-Acceso a herramientas exclusivas</h3>
+        </div>
+        <button type="button" aria-label="Next" class="btn-3">Afiliarme Ahora</button>
+
+        </div>
+
+      </li>
+      <li class="step3 valign">
+
+
+        <div data-seq class="box-step feature foto ">
+
+
+
+        </div>
+
+        <div data-seq class="box-step feature">
+          <h2 data-seq class="title">Empieza a vender hoy mismo</span></h2>
+          <h2 data-seq class="title">KIT DIGITAL</h2>
+          <h3 data-seq class="sub-title">Recibirás en tu correo electrónico: 
+            Tarjeta ADI, Catálogos descargables y 
+            Convertidor de precios</h3>
+          <h3 data-seq class="title">KIT FISICO</h3>
+          <button type="button" aria-label="Next" class="btn-3">Afiliarme Ahora</button>
+
+
+        </div>
+
+
+      </li>
+      <li class="step4 valign">
+
+        <div data-seq class="box-step feature foto">
+
+
+
+        </div>
+
+        <div data-seq class="box-step feature ">
+          <h2 data-seq class="title">Bienvenido a la familia <span class="logo-vianney ">Vianney</span></h2>
+          <h3 data-seq class="sub-title">Inicia tu propio negocio y alcanza tus metas</h3>
+
+
+        </div>
+
+
+      </li>
+    </ul>
+
+
+
+    <fieldset class="nav" aria-label="Slider buttons" aria-controls="sequence">
+
+      <div style="display: block;">
+        <button type="button" class="seq-prev" aria-label="Previous"></button>
+
+        <ul role="navigation" aria-label="Pagination" class="seq-pagination">
+          <li class="seq-current">
+
+            <a href="#step1" rel="step1" title="">
+
+            </a>
+
+          </li>
+          <li>
+            <a href="#step2" rel="step2" title="">
+
+            </a>
+          </li>
+          <li>
+            <a href="#step3" rel="step3" title="">
+
+            </a>
+          </li>
+          <li>
+            <a href="#step4" rel="step4" title="">
+
+            </a>
+          </li>
+        </ul>
+
+
+      </div>
+
+      <div style="display: block;">
+        <button type="button" aria-label="Next" class="btn-round seq-prev"><img src="images/prev.svg"
+            alt="Previous" /></button>
+        <button type="button" aria-label="Next" class="btn-elipse seq-next">Más información</button>
+      </div>
+    </fieldset>
+
+  </div>
+
+  <script src="scripts/imagesloaded.pkgd.min.js"></script>
+  <script src="scripts/hammer.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="scripts/sequence.min.js"></script>
+  <script src="scripts/demo.js"></script>
+</body>
+
 </html>
