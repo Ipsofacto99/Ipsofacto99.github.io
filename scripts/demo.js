@@ -1,8 +1,31 @@
 //const cursor = document.querySelector('.cursor');
 
 //document.addEventListener('mousemove', e => {
-  //  cursor.setAttribute("style", "top: "+(e.pageY - 5)+"px; left: "+(e.pageX - 5)+"px;")
+//  cursor.setAttribute("style", "top: "+(e.pageY - 5)+"px; left: "+(e.pageX - 5)+"px;")
 //})
+
+function btnPosition() {
+  var display = screen.width;
+  if (display < 500) {
+    console.log("hola")
+
+   
+    $( ".btn-container-2" ).remove();
+    $(".btn-area-2").append(`<button type="button" aria-label="Next" class="btn-elipse">Comenzar proceso de afiliación</button>`);
+    $(".btn-area-2").fadeIn();
+    $(".btn-area-1").fadeIn();
+
+  }else{
+
+    $( ".btn-container" ).remove();
+    $(".btn-area-1").append(`<button type="button" aria-label="Next" class="btn-elipse">Comenzar proceso de afiliación</button>`);
+    $(".btn-area-2").fadeIn();
+    $(".btn-area-1").fadeIn();
+
+    
+
+  }
+}
 
 
 
@@ -46,11 +69,9 @@ $('.sub-title').hover(function () {
 )
 
 $('.foto').hover(function () {
-  
-  $(this).removeClass("animate__animated");
 
-}
+    $(this).removeClass("animate__animated");
+
+  }
 
 )
-
-
