@@ -921,33 +921,33 @@ object {
   }
 
   .title {
-    font-size: 20px;
+    font-size: 19px;
     line-height: 1.1;
   }
 
   .sub-title {
-    font-size: 18px;
+    font-size: 17px;
     line-height: 1.1;
   }
 
   .text {
-    font-size: 16px;
+    font-size: 15px;
     text-align: left;
 
   }
 
   .title-caption {
-    font-size: 16px;
+    font-size: 15px;
     text-align: left;
   }
 
   .text-caption {
-    font-size: 16px;
+    font-size: 15px;
     text-align: left;
   }
 
   .logo-vianney {
-    font-size: 59px;
+    font-size: 56px;
     margin-top: -11px;
     margin-bottom: -8px;
   }
@@ -1033,7 +1033,7 @@ object {
   .title-card {
     font-family: Poppins;
     font-weight: 500;
-    font-size: 20px;
+    font-size: 19px;
     text-align: left;
     line-height: 1;
     margin: 0px;
@@ -1042,7 +1042,7 @@ object {
 
   .text-disclaimer {
     font-family: Poppins;
-    font-size: 12px;
+    font-size: 11px;
     margin: 0px;
     font-weight: 400;
     text-align: left;
@@ -1052,7 +1052,7 @@ object {
 
   .text-indication {
     font-family: Poppins;
-    font-size: 12px;
+    font-size: 11px;
     margin-bottom: 10px;
     font-weight: 400;
     text-align: center;
@@ -1061,7 +1061,7 @@ object {
   }
 
   .title-price {
-    font-size: 16px;
+    font-size: 15px;
     text-align: left;
     font-family: Poppins;
     font-style: normal;
