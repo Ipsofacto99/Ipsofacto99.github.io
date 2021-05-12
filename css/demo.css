@@ -281,7 +281,7 @@ button {
   z-index: 100;
   left: 0;
   right: 0;
-  bottom: 0.5em;
+  bottom: 15px;
   max-width: 640px;
   width: 100%;
   height: auto;
@@ -827,7 +827,7 @@ object {
   ##Screen = 1281px to higher resolution desktops
 */
 
-@media (min-width: 1281px) and (max-width: 1500px) {
+@media (min-width: 1280px) and (max-width: 1500px) {
 
   .question-set {
     margin-left: 5%;
@@ -897,9 +897,10 @@ object {
 
   .box-step {
     max-width: 40%;
-    min-width: 30%;
-    height: auto;
-    outline: none;
+    min-width: 40%;
+    height: 95%;
+    overflow-y: scroll;
+    overflow-x: hidden;
   }
 
 
@@ -2257,6 +2258,11 @@ object {
 
 @media (min-width: 320px) and (max-width: 480px) {
 
+
+  .box-text{
+  margin-top: 15px;
+  }
+
   .question-set {
     margin-left: 0%;
   }
@@ -2280,6 +2286,7 @@ object {
     border-radius: 15px;
     position: relative;
     height: 0;
+    
   }
 
   .video-responsive iframe {
@@ -2331,7 +2338,7 @@ object {
   .box-step-1 {
 
     min-width: 90%;
-    height: 130%;
+    height: 138%;
   }
 
   .box-step {
@@ -2339,7 +2346,7 @@ object {
     min-width: 80%;
     overflow-y: scroll;
     overflow-x: none;
-    height: calc(280% - 20px);
+    height: calc(275% - 20px);
   }
 
 
@@ -2347,7 +2354,7 @@ object {
   .text-wrapper {
     align-content: center;
     text-align: center;
-    padding: 6%;
+    padding: 5%;
 
   }
 
