@@ -684,6 +684,8 @@ button {
 
   .btn-area-1 {
     display: block;
+    position: sticky;
+    bottom: 20px;
   }
 
   .btn-area-2 {
@@ -2734,4 +2736,14 @@ object {
     height: 120px;
     opacity: 0;
   }
+}
+
+.box-step::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.box-step {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
