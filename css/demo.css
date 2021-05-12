@@ -684,8 +684,7 @@ button {
 
   .btn-area-1 {
     display: block;
-    position: sticky;
-    bottom: 20px;
+   
   }
 
   .btn-area-2 {
@@ -2420,6 +2419,8 @@ object {
 
   .btn-area-1 {
     display: block;
+    position: sticky;
+    bottom: 20px;
   }
 
   .btn-area-2 {
