@@ -4,29 +4,35 @@
 //  cursor.setAttribute("style", "top: "+(e.pageY - 5)+"px; left: "+(e.pageX - 5)+"px;")
 //})
 
-function btnPosition() {
-  var display = screen.width;
-  if (display < 500) {
-    $(".btn-container-2").remove();
-    $(".btn-area-2").append(`<button type="button" aria-label="Next" class="btn-elipse">Comenzar proceso de afiliación</button>`);
-    $(".btn-area-2").fadeIn();
-    $(".btn-area-1").fadeIn();
-  } else {
-    $(".btn-container").remove();
-    $(".btn-area-1").append(`<button type="button" aria-label="Next" class="btn-elipse">Comenzar proceso de afiliación</button>`);
-    $(".btn-area-2").fadeIn();
-    $(".btn-area-1").fadeIn();
 
-  }
-}
 
-var nameArr = ["Kits de afiliación", "Preguntas Frecuentes", "Volver al Inicio", "Beneficios de Afiliarse"];
+var nameArr = ["Beneficios de Afiliarse", "Kits de afiliación", "Preguntas Frecuentes", "Volver al Inicio"];
+var namePos = 0;
 
 
 
 $("#btn-name").click(function () {
-  $("#btn-name").text(nameArr[0]);
-  nameArr.push(nameArr.splice(0, 1)[0]);
+  if (namePos >= 3) {
+    namePos = 0;
+  }else{
+    namePos += 1;
+
+  }
+
+  $("#btn-name").text(nameArr[namePos]);
+ 
+});
+
+$(".btn-round").click(function () {
+  if (namePos == 0) {
+    namePos = 3;
+  }else{
+    namePos -= 1;
+
+  }
+
+  $("#btn-name").text(nameArr[namePos]);
+ 
 });
 
 $(".text-indication").click(function () {
@@ -57,17 +63,9 @@ $("#AFI-PAGE3-D").click(function () {
 var rotation = false;
 
 
-$(".question-block").click(function () {
-  $(this).children('.question-container').click()
+$(".btn-icon").click(function () {
+  $(this).parent().siblings(".question-container").click()
 })
-
-$(".horasi").click(function () {
-  console.log("hola")
-})
-
-
-
-
 
 
 

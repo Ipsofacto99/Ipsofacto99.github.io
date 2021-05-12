@@ -13,9 +13,7 @@
 
 }
 
-.question-set {
-  margin-left: 5%;
-}
+
 
 
 body,
@@ -283,7 +281,7 @@ button {
   z-index: 100;
   left: 0;
   right: 0;
-  bottom: 2.5em;
+  bottom: 0.5em;
   max-width: 640px;
   width: 100%;
   height: auto;
@@ -531,13 +529,14 @@ button {
 
 }
 
-.foto:hover {
-  animation: mymove 20s infinite;
 
-}
 
 
 @media (min-width: 1500px) {
+
+  .question-set {
+    margin-left: 5%;
+  }
 
 
   .card .btn-elipse-lite {
@@ -813,7 +812,7 @@ button {
     align-self: baseline;
     vertical-align: top;
     outline: none;
-    pointer-events: none;
+    
   }
 
 
@@ -829,6 +828,10 @@ object {
 */
 
 @media (min-width: 1281px) and (max-width: 1500px) {
+
+  .question-set {
+    margin-left: 5%;
+  }
 
 
   .card .btn-elipse-lite {
@@ -1105,7 +1108,7 @@ object {
     align-self: baseline;
     vertical-align: top;
     outline: none;
-    pointer-events: none;
+   
   }
 
 
@@ -1118,6 +1121,10 @@ object {
 */
 
 @media (min-width: 1025px) and (max-width: 1280px) {
+
+  .question-set {
+    margin-left: 5%;
+  }
 
   .video-responsive {
     overflow: hidden;
@@ -1362,7 +1369,7 @@ object {
     align-self: flex-end;
     align-self: baseline;
     vertical-align: top;
-    pointer-events: none;
+  
   }
 
   .card-container {
@@ -1391,6 +1398,10 @@ object {
 */
 
 @media (min-width: 768px) and (max-width: 1024px) {
+
+  .question-set {
+    margin-left: 1%;
+  }
 
   .cursor {
     display: none;
@@ -1641,7 +1652,7 @@ object {
     align-self: flex-end;
     align-self: baseline;
     vertical-align: top;
-    pointer-events: none;
+  
   }
 
   .card-container {
@@ -1674,6 +1685,10 @@ object {
 */
 
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+
+  .question-set {
+    margin-left: 4%;
+  }
 
   .cursor {
     display: none;
@@ -1921,7 +1936,7 @@ object {
     align-self: flex-end;
     align-self: baseline;
     vertical-align: top;
-    pointer-events: none;
+   
   }
 
   .card-container {
@@ -1954,6 +1969,10 @@ object {
 */
 
 @media (min-width: 481px) and (max-width: 767px) {
+
+  .question-set {
+    margin-left: 1%;
+  }
 
   .cursor {
     display: none;
@@ -2204,7 +2223,7 @@ object {
     align-self: flex-end;
     align-self: baseline;
     vertical-align: top;
-    pointer-events: none;
+  
   }
 
   .card-container {
@@ -2237,6 +2256,10 @@ object {
 */
 
 @media (min-width: 320px) and (max-width: 480px) {
+
+  .question-set {
+    margin-left: 0%;
+  }
 
   .cursor {
     display: none;
@@ -2277,6 +2300,7 @@ object {
     background-image: url(/images/IMAGE1.jpg);
     width: 60%;
     background-size: cover;
+    background-position: top;
 
   }
 
@@ -2284,7 +2308,7 @@ object {
     background-image:  url(/images/IMAGE3.jpg);
     width: 60%;
     background-size: cover;
-    background-position: center;
+    background-position: bottom;
 
 
   }
@@ -2490,7 +2514,7 @@ object {
     align-self: flex-end;
     align-self: baseline;
     vertical-align: top;
-    pointer-events: none;
+ 
   }
 
   .card-container {
@@ -2679,6 +2703,16 @@ object {
 .btn-3:focus::after {
   animation: none;
   display: none;
+}
+
+
+.btn-icon{
+  outline: none;
+    background-color: transparent;
+    border: none;
+    margin: 0px;
+    padding: 0px;
+    cursor: pointer;
 }
 
 @keyframes ring {
