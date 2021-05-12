@@ -13,6 +13,11 @@
 
 }
 
+.question-set {
+  margin-left: 5%;
+}
+
+
 body,
 html,
 .seq {
@@ -57,12 +62,15 @@ html,
   transition-property: background-color;
 }
 
-.align-icon{
- 
+.align-icon {
+
   padding-top: 10px;
 }
 
 
+body {
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+}
 
 /*
  * Styles: Canvas and steps
@@ -75,11 +83,34 @@ html,
   /* #1 */
   height: 100%;
   width: 100%;
-
+  outline: none;
   /* #2 */
   margin: 0;
   padding: 0;
   list-style: none;
+}
+
+
+div:active {
+  outline: none;
+  background-color: transparent;
+}
+
+button {
+  outline: none;
+  background-color: transparent;
+
+}
+
+.box-step:active {
+  outline: none;
+  background-color: transparent;
+}
+
+
+.box-step-1:active {
+  outline: none;
+  background-color: transparent;
 }
 
 /*
@@ -94,6 +125,7 @@ html,
 
   /* #2 */
   padding: 32px;
+  outline: none;
   box-sizing: border-box;
 
   /* #3 */
@@ -118,7 +150,7 @@ html,
   background: #fff;
 }
 
-.feature {}
+
 
 
 
@@ -127,11 +159,13 @@ html,
 .valign:before {
   content: "";
   height: 100%;
+  outline: none;
 }
 
 /* Vertically align the ghost and desired elements */
 .valign:before,
-.valign>.box-step, .box-step-1 {
+.valign>.box-step,
+.box-step-1 {
   display: inline-block;
   vertical-align: middle;
   cursor: pointer;
@@ -139,12 +173,9 @@ html,
 }
 
 /* Remove 4px gap to allow consistent valign */
-.valign {
-  
-}
 
 /* Reset font-size on valigned elements */
-.valign>.box-step {}
+
 
 /*
  * 1: Reset
@@ -165,7 +196,24 @@ html,
 
 }
 
-.title:hover {}
+.icon-list-2 {
+  display: inline-block;
+  margin: 6px 12px 0px 0px;
+  animation-duration: 5000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 
 .sub-title {
   /* #1 */
@@ -184,7 +232,7 @@ html,
  * When a step is active, fade in to opaque and slide to the center
  */
 .seq-in .title {
-opacity: 1;
+  opacity: 1;
 
 }
 
@@ -195,7 +243,7 @@ opacity: 1;
   opacity: 0;
 }
 
-.seq-out .box-step-1{
+.seq-out .box-step-1 {
   opacity: 0;
 }
 
@@ -204,7 +252,7 @@ opacity: 1;
  */
 .feature {
   opacity: 0;
-  
+
 }
 
 /*
@@ -371,17 +419,22 @@ opacity: 1;
 }
 
 
-.box-step, .box-step-1 {
+.box-step,
+.box-step-1 {
 
   border-radius: 15px;
   word-wrap: break-word;
 }
 
+.no-margin {
+  margin: 0px !important;
+}
 
 
 
 #sequence h2,
-#sequence h3 {
+#sequence h3,
+#sequence h4 {
   opacity: 0;
   -webkit-transition-duration: 0.8s;
   transition-duration: 0.8s;
@@ -399,9 +452,16 @@ opacity: 1;
   opacity: 0;
 }
 
+#sequence h4 {
+  -webkit-transform: translate(0, 40px);
+  transform: translate(0, 40px);
+  opacity: 0;
+}
+
 /* Animate in positions for content */
 #sequence .seq-in h2,
-#sequence .seq-in h3 {
+#sequence .seq-in h3,
+#sequence .seq-in h4 {
   opacity: 1;
   -webkit-transform: translate(0, 0);
   transform: translate(0, 0);
@@ -409,7 +469,8 @@ opacity: 1;
 
 /* Animate out positions for content */
 #sequence .seq-out h2,
-#sequence .seq-out h3 {
+#sequence .seq-out h3,
+#sequence .seq-out h4 {
   opacity: 0;
   -webkit-transform: translate(0, 0);
   transform: translate(0, 0);
@@ -421,12 +482,17 @@ opacity: 1;
   height: auto;
   padding: 15px;
   border-radius: 50%;
-  position: absolute;
-  transition-duration: 40ms;
-  transition-timing-function: ease-out;
+  position: fixed;
   display: inline-grid;
-  pointer-events: none;
-  z-index: 500;
+  top: 20px;
+  left: 20px;
+  cursor: pointer;
+  opacity: 0.80;
+
+}
+
+.cursor:hover {
+  opacity: 1;
 }
 
 .sticky-button {
@@ -439,7 +505,7 @@ opacity: 1;
 }
 
 
-.text-indication{
+.text-indication {
   font-family: Poppins;
   font-weight: 400;
   text-align: center;
@@ -471,63 +537,61 @@ opacity: 1;
 }
 
 
-@media (min-width: 1500px){
+@media (min-width: 1500px) {
 
 
-  .card .btn-elipse-lite{
+  .card .btn-elipse-lite {
 
-    position: absolute; 
-    bottom: 15px; 
+    position: absolute;
+    bottom: 15px;
     left: 35px;
   }
 
-  .video-responsive{
-    overflow:hidden;
+  .video-responsive {
+    overflow: hidden;
     padding-bottom: 98.25%;
     border-radius: 15px;
-    position:relative;
-    height:0;
-}
-.video-responsive iframe{
-    left:0;
-    top:0;
-    height:100%;
-    width:100%;
-    position:absolute;
-}
+    position: relative;
+    height: 0;
+  }
+
+  .video-responsive iframe {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+  }
 
   .foto {
     background-color: transparent;
-    width: 33%;
-    height: 80%;
-    margin: 1%;
-
-
+    height: 100%;
+    width: 100%;
   }
 
   .foto2 {
-    background-image: url(https://i.ibb.co/QHXCdGS/afiliacion.jpg);
-    width: 33%;
-    height: 80%;
-    margin: 1%;
+    background-image: url(/images/IMAGE1.jpg);
+    height: 100%;
+    width: 100%;
+    background-size: cover;
 
 
   }
 
   .foto3 {
-    background-image: url(https://i.ibb.co/RQcfn0w/pf.jpg);
-    width: 33%;
-    height: 80%;
-    margin: 1%;
+    background-image:  url(/images/IMAGE3.jpg);
+    height: 100%;
+    width: 100%;
+    background-size: cover;
 
 
   }
 
   .foto4 {
-    background-image: url(https://i.ibb.co/RyrRTZ2/image-2.png);
-    width: 33%;
-    height: 80%;
-    margin: 1%;
+    background-image:  url(/images/IMAGE2.png);
+    height: 100%;
+    width: 100%;
+    background-size: cover;
 
 
   }
@@ -541,16 +605,17 @@ opacity: 1;
     max-width: 40%;
     min-width: 30%;
     height: auto;
+    outline: none;
   }
 
   .box-step-1 {
-    max-width: 40%;
-    min-width: 30%;
-    height: 600px;
-  
+    width: 30%;
+    height: 550px;
+    outline: none;
+
   }
 
-  
+
 
   .text-wrapper {
     align-content: center;
@@ -575,12 +640,12 @@ opacity: 1;
 
   }
 
-  .title-caption{
+  .title-caption {
     font-size: 18px;
     text-align: left;
   }
 
-  .text-caption{
+  .text-caption {
     font-size: 18px;
     text-align: left;
   }
@@ -606,26 +671,28 @@ opacity: 1;
     display: inline-block;
     cursor: pointer;
   }
-  .btn-elipse-lite{
+
+  .btn-elipse-lite {
     padding: 15px 40px;
     font-size: 12px;
   }
-  .btn-round{
+
+  .btn-round {
     padding: 14px 20px;
     margin-right: 5px;
 
   }
 
-  .btn-area-1{
+  .btn-area-1 {
     display: block;
   }
 
-  .btn-area-2{
+  .btn-area-2 {
     display: block;
   }
 
-  .card{
-    filter:drop-shadow(10px 14.03012px 7.0904px rgba(176, 190, 197, 0.32)) drop-shadow(0px 3.38629px 5.64383px rgba(176, 190, 197, 0.32));
+  .card {
+    filter: drop-shadow(10px 14.03012px 7.0904px rgba(176, 190, 197, 0.32)) drop-shadow(0px 3.38629px 5.64383px rgba(176, 190, 197, 0.32));
     padding: 5% 4%;
     margin: 25px 2px 15px 2px;
     border-radius: 8px;
@@ -638,35 +705,36 @@ opacity: 1;
 
   }
 
-  .v-fix{
+  .v-fix {
     padding: 25px;
   }
 
-  .q-icon{
+  .q-icon {
     display: inline-block;
     vertical-align: -webkit-baseline-middle;
     margin-left: 25px;
   }
 
-  .icon-list{
+  .icon-list {
     display: inline-block;
     margin: 6px 12px 0px 0px;
   }
 
-  .list-container{
+  .list-container {
     display: block;
     width: auto;
     word-break: break-word;
   }
 
-  .list-block{
-  
+  .list-block {
+
     display: -webkit-box;
     padding: 0px;
     margin: 2px;
     word-break: break-word;
   }
-  .title-card{
+
+  .title-card {
     font-family: Poppins;
     font-weight: 500;
     font-size: 22px;
@@ -675,7 +743,8 @@ opacity: 1;
     margin: 0px;
     letter-spacing: 1px;
   }
-  .text-disclaimer{
+
+  .text-disclaimer {
     font-family: Poppins;
     font-size: 12px;
     margin: 0px;
@@ -684,7 +753,8 @@ opacity: 1;
     letter-spacing: 1px;
 
   }
-  .text-indication{
+
+  .text-indication {
     font-family: Poppins;
     font-size: 12px;
     margin-bottom: 10px;
@@ -693,7 +763,8 @@ opacity: 1;
     letter-spacing: 1px;
 
   }
-  .title-price{
+
+  .title-price {
     font-size: 18px;
     text-align: left;
     font-family: Poppins;
@@ -704,14 +775,14 @@ opacity: 1;
     text-rendering: optimizeLegibility;
     color: #000000;
     margin: 2px;
-    
+
   }
 
-  .card-container{
+  .card-container {
     width: 100%;
   }
 
-  .question-block{
+  .question-block {
     display: block;
     width: 600px;
     text-align: left;
@@ -720,27 +791,38 @@ opacity: 1;
     border-bottom: 1px solid black;
     transition: all 0.2 s ease-out;
     opacity: 0.8;
+    outline: none;
   }
 
-  .question-block:hover{
+  .question-block:hover {
     opacity: 1;
+    outline: none;
   }
 
 
-  .question-container{
+  .question-container {
     display: inline-block;
     width: 95%;
     text-align: left;
+    outline: none;
   }
-  .question-icon{
+
+  .question-icon {
     display: inline-block;
     align-self: flex-end;
     align-self: baseline;
     vertical-align: top;
+    outline: none;
+    pointer-events: none;
   }
 
 
 }
+
+object {
+  pointer-events: none;
+}
+
 /* 
   ##Device = Desktops
   ##Screen = 1281px to higher resolution desktops
@@ -748,80 +830,59 @@ opacity: 1;
 
 @media (min-width: 1281px) and (max-width: 1500px) {
 
-  .text-indication{
-    font-family: Poppins;
-    font-size: 12px;
-    margin-bottom: 10px;
-    font-weight: 400;
-    text-align: center;
-    letter-spacing: 1px;
 
-  }
+  .card .btn-elipse-lite {
 
-
-  .card .btn-elipse-lite{
-    position: absolute; 
-    bottom: 15px; 
+    position: absolute;
+    bottom: 15px;
     left: 35px;
   }
 
-  .video-responsive{
-    overflow:hidden;
+  .video-responsive {
+    overflow: hidden;
     padding-bottom: 98.25%;
     border-radius: 15px;
-    position:relative;
-    height:0;
-}
-.video-responsive iframe{
-    left:0;
-    top:0;
-    height:100%;
-    width:100%;
-    position:absolute;
-}
+    position: relative;
+    height: 0;
+  }
 
-
-  .foto {
-    background-image: url(https://mir-s3-cdn-cf.behance.net/project_modules/fs/8bc548114207683.6036b09f5cb00.jpg);
-    width: 40%;
-    height: 80%;
-    margin: 1%;
-
-
+  .video-responsive iframe {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
   }
 
   .foto {
     background-color: transparent;
-    width: 40%;
-    height: 80%;
-    margin: 1%;
-
-
+    height: 100%;
+    width: 100%;
   }
 
   .foto2 {
-    background-image: url(https://i.ibb.co/QHXCdGS/afiliacion.jpg);
-    width: 40%;
-    height: 80%;
-    margin: 1%;
+    background-image: url(/images/IMAGE1.jpg);
+    height: 100%;
+    width: 100%;
+    background-size: cover;
 
 
   }
 
   .foto3 {
-    background-image: url(https://i.ibb.co/RQcfn0w/pf.jpg);
-    width: 40%;
-    height: 80%;
-    margin: 1%;
+    background-image:  url(/images/IMAGE3.jpg);
+    height: 100%;
+    width: 100%;
+    background-size: cover;
 
 
   }
 
   .foto4 {
-    background-image: url(https://i.ibb.co/RyrRTZ2/image-2.png);
-    width: 40%;
-    height: 80%;
-    margin: 1%;
+    background-image:  url(/images/IMAGE2.png);
+    height: 100%;
+    width: 100%;
+    background-size: cover;
 
 
   }
@@ -835,16 +896,18 @@ opacity: 1;
     max-width: 40%;
     min-width: 30%;
     height: auto;
+    outline: none;
   }
+
 
   .box-step-1 {
-    max-width: 40%;
+    max-width: 30%;
     min-width: 30%;
     height: 400px;
-  
+
   }
 
-  
+
 
   .text-wrapper {
     align-content: center;
@@ -854,33 +917,33 @@ opacity: 1;
   }
 
   .title {
-    font-size: 18px;
+    font-size: 20px;
     line-height: 1.1;
   }
 
   .sub-title {
-    font-size: 16px;
+    font-size: 18px;
     line-height: 1.1;
   }
 
   .text {
-    font-size: 14px;
+    font-size: 16px;
     text-align: left;
 
   }
 
-  .title-caption{
-    font-size: 14px;
+  .title-caption {
+    font-size: 16px;
     text-align: left;
   }
 
-  .text-caption{
-    font-size: 14px;
+  .text-caption {
+    font-size: 16px;
     text-align: left;
   }
 
   .logo-vianney {
-    font-size: 55px;
+    font-size: 59px;
     margin-top: -11px;
     margin-bottom: -8px;
   }
@@ -894,30 +957,33 @@ opacity: 1;
   }
 
   .btn-elipse {
-    font-size: 10px;
+    font-size: 12px;
     padding: 15px 20px;
     letter-spacing: 1.2px;
     display: inline-block;
+    cursor: pointer;
   }
-  .btn-elipse-lite{
+
+  .btn-elipse-lite {
     padding: 15px 40px;
-    font-size: 10px;
+    font-size: 12px;
   }
-  .btn-round{
-    padding: 16px 20px;
+
+  .btn-round {
+    padding: 14px 20px;
     margin-right: 5px;
 
   }
 
-  .btn-area-1{
+  .btn-area-1 {
     display: block;
   }
 
-  .btn-area-2{
+  .btn-area-2 {
     display: block;
   }
 
-  .card{
+  .card {
     filter: drop-shadow(10px 14.03012px 7.0904px rgba(176, 190, 197, 0.32)) drop-shadow(0px 3.38629px 5.64383px rgba(176, 190, 197, 0.32));
     padding: 5% 4%;
     margin: 25px 2px 15px 2px;
@@ -925,60 +991,73 @@ opacity: 1;
     display: inline-block;
     width: 40%;
     background-color: white;
-    min-height: 260px;
+    min-height: 300px;
     align-content: center;
     vertical-align: top;
 
   }
 
-  .v-fix{
+  .v-fix {
     padding: 25px;
   }
 
-  .q-icon{
+  .q-icon {
     display: inline-block;
     vertical-align: -webkit-baseline-middle;
     margin-left: 25px;
   }
 
-  .icon-list{
+  .icon-list {
     display: inline-block;
     margin: 6px 12px 0px 0px;
   }
 
-  .list-container{
+  .list-container {
     display: block;
     width: auto;
     word-break: break-word;
   }
 
-  .list-block{
-  
+  .list-block {
+
     display: -webkit-box;
     padding: 0px;
     margin: 2px;
     word-break: break-word;
   }
-  .title-card{
+
+  .title-card {
     font-family: Poppins;
     font-weight: 500;
-    font-size: 18px;
+    font-size: 20px;
     text-align: left;
     line-height: 1;
     margin: 0px;
     letter-spacing: 1px;
   }
-  .text-disclaimer{
+
+  .text-disclaimer {
     font-family: Poppins;
-    font-size: 8px;
+    font-size: 12px;
     margin: 0px;
     font-weight: 400;
     text-align: left;
     letter-spacing: 1px;
 
   }
-  .title-price{
-    font-size: 14px;
+
+  .text-indication {
+    font-family: Poppins;
+    font-size: 12px;
+    margin-bottom: 10px;
+    font-weight: 400;
+    text-align: center;
+    letter-spacing: 1px;
+
+  }
+
+  .title-price {
+    font-size: 16px;
     text-align: left;
     font-family: Poppins;
     font-style: normal;
@@ -988,11 +1067,45 @@ opacity: 1;
     text-rendering: optimizeLegibility;
     color: #000000;
     margin: 2px;
-    
+
   }
 
-  .card-container{
+  .card-container {
     width: 100%;
+  }
+
+  .question-block {
+    display: block;
+    width: 500px;
+    text-align: left;
+    margin: 10px;
+    padding: 18px;
+    border-bottom: 1px solid black;
+    transition: all 0.2 s ease-out;
+    opacity: 0.8;
+    outline: none;
+  }
+
+  .question-block:hover {
+    opacity: 1;
+    outline: none;
+  }
+
+
+  .question-container {
+    display: inline-block;
+    width: 87%;
+    text-align: left;
+    outline: none;
+  }
+
+  .question-icon {
+    display: inline-block;
+    align-self: flex-end;
+    align-self: baseline;
+    vertical-align: top;
+    outline: none;
+    pointer-events: none;
   }
 
 
@@ -1006,106 +1119,83 @@ opacity: 1;
 
 @media (min-width: 1025px) and (max-width: 1280px) {
 
-  .video-responsive{
-    overflow:hidden;
+  .video-responsive {
+    overflow: hidden;
     padding-bottom: 98.25%;
     border-radius: 15px;
-    position:relative;
-    height:0;
-}
-.video-responsive iframe{
-    left:0;
-    top:0;
-    height:100%;
-    width:100%;
-    position:absolute;
-}
-
-  .text-indication{
-    font-family: Poppins;
-    font-size: 12px;
-    margin-bottom: 10px;
-    font-weight: 400;
-    text-align: center;
-    letter-spacing: 1px;
-
+    position: relative;
+    height: 0;
   }
 
-  .card .btn-elipse-lite{
-
-    position: absolute; 
-    bottom: 15px; 
-    left: 35px;
+  .video-responsive iframe {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
   }
 
   /* CSS */
-  .box-step {
-    width: 40%;
-  }
-
   .foto {
     background-color: transparent;
-    width: 30%;
-    height: auto;
-    margin: 1%;
-    transition: ease-in;
-
+    height: 100%;
+    width: 100%;
   }
 
   .foto2 {
-    background-image: url(https://i.ibb.co/QHXCdGS/afiliacion.jpg);
-    width: 30%;
-    height: auto;
-    margin: 1%;
-    transition: ease-in;
+    background-image: url(/images/IMAGE1.jpg);
+    height: 100%;
+    width: 100%;
+    background-size: cover;
 
 
   }
 
   .foto3 {
-    background-image: url(https://i.ibb.co/RQcfn0w/pf.jpg);
-    width: 30%;
-    height: auto;
-    margin: 1%;
-    transition: ease-in;
+    background-image:  url(/images/IMAGE3.jpg);
+    height: 100%;
+    width: 100%;
+    background-size: cover;
 
 
   }
 
   .foto4 {
-    background-image: url(https://i.ibb.co/RyrRTZ2/image-2.png);
-    width: 30%;
-    height: auto;
-    margin: 1%;
-    transition: ease-in;
+    background-image:  url(/images/IMAGE2.png);
+    height: 100%;
+    width: 100%;
+    background-size: cover;
 
 
   }
 
   .seq-canvas>* {
     padding: 10px;
-    height: 25%;
+    height: 90%;
   }
 
   .box-step {
     max-width: 40%;
-    min-width: 30%;
-    height: auto;
+    min-width: 40%;
+    height: 95%;
+    overflow-y: scroll;
+    overflow-x: hidden;
   }
 
   .box-step-1 {
     max-width: 40%;
-    min-width: 30%;
+    min-width: 40%;
     height: 400px;
-  
+
   }
 
-  
+
 
   .text-wrapper {
     align-content: center;
     text-align: center;
     padding: 6%;
+    margin-top: 15%;
 
   }
 
@@ -1125,12 +1215,12 @@ opacity: 1;
 
   }
 
-  .title-caption{
+  .title-caption {
     font-size: 16px;
     text-align: left;
   }
 
-  .text-caption{
+  .text-caption {
     font-size: 16px;
     text-align: left;
   }
@@ -1155,51 +1245,54 @@ opacity: 1;
     letter-spacing: 1.2px;
     display: inline-block;
   }
-  .btn-elipse-lite{
+
+  .btn-elipse-lite {
     padding: 15px 40px;
     font-size: 12px;
   }
-  .btn-round{
+
+  .btn-round {
     padding: 16px 20px;
     margin-right: 5px;
 
   }
 
-  .btn-area-1{
+  .btn-area-1 {
     display: block;
   }
 
-  .btn-area-2{
+  .btn-area-2 {
     display: block;
   }
 
-  .card{
+  .card {
     box-shadow: rgb(0 0 0 / 12%) 0px 8px 24px 0px;
-    padding: 25px;
-    margin: 25px 2px 25px 2px;
+    padding: 15px;
+    margin: 25px 15px 15px 15px;
     border-radius: 15px;
 
   }
 
-  .icon-list{
-    display: 6px 12px 0px 0px;
+  .icon-list {
+    display: inline-block;
     margin: 5px;
   }
 
-  .list-container{
+  .list-container {
     display: block;
     width: auto;
     word-break: break-word;
   }
 
-  .list-block{
-  
+  .list-block {
+
     display: -webkit-box;
     padding: 0px;
     margin: 2px;
     word-break: break-word;
   }
-  .title-card{
+
+  .title-card {
     font-family: Poppins;
     font-weight: 500;
     font-size: 20px;
@@ -1208,7 +1301,8 @@ opacity: 1;
     margin: 0px;
     letter-spacing: 1px;
   }
-  .text-disclaimer{
+
+  .text-disclaimer {
     font-family: Poppins;
     font-size: 12px;
     margin: 0px;
@@ -1217,7 +1311,8 @@ opacity: 1;
     letter-spacing: 1px;
 
   }
-  .title-price{
+
+  .title-price {
     font-size: 16px;
     text-align: left;
     font-family: Poppins;
@@ -1228,8 +1323,65 @@ opacity: 1;
     text-rendering: optimizeLegibility;
     color: #000000;
     margin: 2px;
-    
+
   }
+
+  .question-block {
+    display: block;
+    width: 380px;
+    text-align: left;
+    margin: 10px;
+    padding: 18px;
+    border-bottom: 1px solid black;
+    transition: all 0.2 s ease-out;
+    opacity: 0.8;
+  }
+
+  .question-text {
+    font-size: 14px;
+  }
+
+  .question-block:hover {
+    opacity: 1;
+  }
+
+  .question-set {
+    padding-top: 20px;
+    padding-bottom: 40px;
+  }
+
+
+  .question-container {
+    display: inline-block;
+    width: 85%;
+    text-align: left;
+  }
+
+  .question-icon {
+    display: inline-block;
+    align-self: flex-end;
+    align-self: baseline;
+    vertical-align: top;
+    pointer-events: none;
+  }
+
+  .card-container {
+    padding-bottom: 40px;
+    width: 90%;
+
+  }
+
+  .card-title-set {
+    padding: 25px 25px 0px 25px;
+  }
+
+  .text-indication {
+    font-size: 12px;
+    font-weight: 400;
+
+
+  }
+
 
 }
 
@@ -1240,462 +1392,36 @@ opacity: 1;
 
 @media (min-width: 768px) and (max-width: 1024px) {
 
-  .video-responsive{
-    overflow:hidden;
-    padding-bottom: 98.25%;
-    border-radius: 15px;
-    position:relative;
-    height:0;
-}
-.video-responsive iframe{
-    left:0;
-    top:0;
-    height:100%;
-    width:100%;
-    position:absolute;
-}
-
-
-  .text-indication{
-    font-family: Poppins;
-    font-size: 12px;
-    margin-bottom: 10px;
-    font-weight: 400;
-    text-align: center;
-    letter-spacing: 1px;
-
-  }
-
-  .foto {
-   background-color: transparent;
-    width: 30%;
-    height: 80%;
-    margin: 1%;
-    transition: ease-in;
-
-  }
-
-  .foto2 {
-    background-image: url(https://i.ibb.co/QHXCdGS/afiliacion.jpg);
-    width: 30%;
-    height: 80%;
-    margin: 1%;
-    transition: ease-in;
-
-
-  }
-
-  .foto3 {
-    background-image: url(https://i.ibb.co/RQcfn0w/pf.jpg);
-    width: 30%;
-    height: 80%;
-    margin: 1%;
-    transition: ease-in;
-
-  }
-
-  .foto4 {
-    background-image: url(https://i.ibb.co/RyrRTZ2/image-2.png);
-    width: 30%;
-    height: 80%;
-    margin: 1%;
-    transition: ease-in;
-
-
-  }
-
-  .seq-canvas>* {
-    padding: 10px;
-    height: 25%;
-  }
-
-  .box-step {
-    max-width: 40%;
-    min-width: 30%;
-    height: auto;
-  }
-
-  .box-step-1 {
-    max-width: 40%;
-    min-width: 30%;
-    height: 400px;
-  
-  }
-
-  
-
-  .text-wrapper {
-    align-content: center;
-    text-align: center;
-    padding: 6%;
-
-  }
-
-  .title {
-    font-size: 20px;
-    line-height: 1.1;
-  }
-
-  .sub-title {
-    font-size: 18px;
-    line-height: 1.1;
-  }
-
-  .text {
-    font-size: 16px;
-    text-align: left;
-
-  }
-
-  .title-caption{
-    font-size: 16px;
-    text-align: left;
-  }
-
-  .text-caption{
-    font-size: 16px;
-    text-align: left;
-  }
-
-  .logo-vianney {
-    font-size: 57px;
-    margin-top: -11px;
-    margin-bottom: -8px;
-  }
-
-  .button-area {
-    display: block;
-  }
-
-  .dot-area {
+  .cursor {
     display: none;
   }
 
-  .btn-elipse {
-    font-size: 12px;
-    padding: 15px 20px;
-    letter-spacing: 1.2px;
-    display: inline-block;
-  }
-  .btn-elipse-lite{
-    padding: 15px 40px;
-    font-size: 12px;
-  }
-  .btn-round{
-    padding: 16px 20px;
-    margin-right: 5px;
-
-  }
-
-  .btn-area-1{
-    display: block;
-  }
-
-  .btn-area-2{
-    display: block;
-  }
-
-  .card{
-    box-shadow: rgb(0 0 0 / 12%) 0px 8px 24px 0px;
-    padding: 15px;
-    margin: 25px 15px 15px 15px;
-    border-radius: 15px;
-  }
-
-  .icon-list{
-    display: inline-block;
-    margin: 5px;
-  }
-
-  .list-container{
-    display: block;
-    width: auto;
-    word-break: break-word;
-  }
-
-  .list-block{
-  
-    display: -webkit-box;
-    padding: 0px;
-    margin: 2px;
-    word-break: break-word;
-  }
-  .title-card{
-    font-family: Poppins;
-    font-weight: 500;
-    font-size: 20px;
-    text-align: left;
-    line-height: 1;
-    margin: 0px;
-    letter-spacing: 1px;
-  }
-  .text-disclaimer{
-    font-family: Poppins;
-    font-size: 12px;
-    margin: 0px;
-    font-weight: 400;
-    text-align: left;
-    letter-spacing: 1px;
-
-  }
-  .title-price{
-    font-size: 16px;
-    text-align: left;
-    font-family: Poppins;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 1.3;
-    letter-spacing: 0.05em;
-    text-rendering: optimizeLegibility;
-    color: #000000;
-    margin: 2px;
-    
-  }
-
-
-}
-
-/* 
-  ##Device = Tablets, Ipads (landscape)
-  ##Screen = B/w 768px to 1024px
-*/
-
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-
-  .video-responsive{
-    overflow:hidden;
-    padding-bottom: 98.25%;
-    border-radius: 15px;
-    position:relative;
-    height:0;
-}
-.video-responsive iframe{
-    left:0;
-    top:0;
-    height:100%;
-    width:100%;
-    position:absolute;
-}
-
-  /* CSS */
-  .foto {
-    background-color: transparent;
-    height: 100%;
-    width: 100%;
-  }
-
-  .foto2 {
-    background-image: url(https://i.ibb.co/QHXCdGS/afiliacion.jpg);
-    height: 100%;
-    width: 100%;
-
-
-  }
-
-  .foto3 {
-    background-image: url(https://i.ibb.co/RQcfn0w/pf.jpg);
-    height: 100%;
-    width: 100%;
-
-
-  }
-
-  .foto4 {
-    background-image: url(https://i.ibb.co/RyrRTZ2/image-2.png);
-    height: 100%;
-    width: 100%;
-
-
-  }
-
-  .seq-canvas>* {
-    padding: 10px;
-    height: 25%;
-  }
-
-  .box-step {
-    max-width: 40%;
-    min-width: 30%;
-    height: auto;
-  }
-
-  .box-step-1 {
-    max-width: 40%;
-    min-width: 30%;
-    height: 400px;
-  
-  }
-
-  
-
-  .text-wrapper {
-    align-content: center;
-    text-align: center;
-    padding: 6%;
-
-  }
-
-  .title {
-    font-size: 20px;
-    line-height: 1.1;
-  }
-
-  .sub-title {
-    font-size: 18px;
-    line-height: 1.1;
-  }
-
-  .text {
-    font-size: 16px;
-    text-align: left;
-
-  }
-
-  .title-caption{
-    font-size: 16px;
-    text-align: left;
-  }
-
-  .text-caption{
-    font-size: 16px;
-    text-align: left;
-  }
-
-  .logo-vianney {
-    font-size: 57px;
-    margin-top: -11px;
-    margin-bottom: -8px;
-  }
-
-  .button-area {
-    display: block;
-  }
-
-  .dot-area {
-    display: none;
-  }
-
-  .btn-elipse {
-    font-size: 12px;
-    padding: 15px 20px;
-    letter-spacing: 1.2px;
-    display: inline-block;
-  }
-  .btn-elipse-lite{
-    padding: 15px 40px;
-    font-size: 12px;
-  }
-  .btn-round{
-    padding: 16px 20px;
-    margin-right: 5px;
-
-  }
-
-  .btn-area-1{
-    display: block;
-  }
-
-  .btn-area-2{
-    display: block;
-  }
-
-  .card{
-    box-shadow: rgb(0 0 0 / 12%) 0px 8px 24px 0px;
-    padding: 15px;
-    margin: 25px 15px 15px 15px;
-    border-radius: 15px;
-
-  }
-
-  .icon-list{
-    display: inline-block;
-    margin: 5px;
-  }
-
-  .list-container{
-    display: block;
-    width: auto;
-    word-break: break-word;
-  }
-
-  .list-block{
-  
-    display: -webkit-box;
-    padding: 0px;
-    margin: 2px;
-    word-break: break-word;
-  }
-  .title-card{
-    font-family: Poppins;
-    font-weight: 500;
-    font-size: 20px;
-    text-align: left;
-    line-height: 1;
-    margin: 0px;
-    letter-spacing: 1px;
-  }
-  .text-disclaimer{
-    font-family: Poppins;
-    font-size: 12px;
-    margin: 0px;
-    font-weight: 400;
-    text-align: left;
-    letter-spacing: 1px;
-
-  }
-  .title-price{
-    font-size: 16px;
-    text-align: left;
-    font-family: Poppins;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 1.3;
-    letter-spacing: 0.05em;
-    text-rendering: optimizeLegibility;
-    color: #000000;
-    margin: 2px;
-    
-  }
-
-
-}
-
-/* 
-  ##Device = Low Resolution Tablets, Mobiles (Landscape)
-  ##Screen = B/w 481px to 767px
-*/
-
-@media (min-width: 481px) and (max-width: 767px) {
-
-  .cursor{
-    display: none;
-  }
-
-  .video-responsive{
-    overflow:hidden;
+  .video-responsive {
+    overflow: hidden;
     padding-bottom: 55%;
     border-radius: 15px;
-    position:relative;
-    height:0;
-}
-.video-responsive iframe{
-    left:0;
-    top:0;
-    height:100%;
-    width:100%;
-    position:absolute;
-}
+    position: relative;
+    height: 0;
+  }
+
+  .video-responsive iframe {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+  }
 
   /* CSS */
   .foto {
     background-color: transparent;
     height: 100%;
     width: 100%;
-    
+
   }
 
   .foto2 {
-    background-image: url(https://i.ibb.co/QHXCdGS/afiliacion.jpg);
+    background-image: url(/images/IMAGE1.jpg);
     height: 100%;
     width: 100%;
     background-size: cover;
@@ -1704,7 +1430,7 @@ opacity: 1;
   }
 
   .foto3 {
-    background-image: url(https://i.ibb.co/RQcfn0w/pf.jpg);
+    background-image:  url(/images/IMAGE3.jpg);
     height: 100%;
     width: 100%;
     background-size: cover;
@@ -1713,7 +1439,7 @@ opacity: 1;
   }
 
   .foto4 {
-    background-image: url(https://i.ibb.co/RyrRTZ2/image-2.png);
+    background-image:  url(/images/IMAGE2.png);
     height: 100%;
     width: 100%;
     background-size: cover;
@@ -1738,10 +1464,10 @@ opacity: 1;
     max-width: 70%;
     min-width: 70%;
     height: 120%;
-  
+
   }
 
-  
+
 
   .text-wrapper {
     align-content: center;
@@ -1767,12 +1493,12 @@ opacity: 1;
 
   }
 
-  .title-caption{
+  .title-caption {
     font-size: 16px;
     text-align: left;
   }
 
-  .text-caption{
+  .text-caption {
     font-size: 16px;
     text-align: left;
   }
@@ -1797,25 +1523,27 @@ opacity: 1;
     letter-spacing: 1.2px;
     display: inline-block;
   }
-  .btn-elipse-lite{
+
+  .btn-elipse-lite {
     padding: 15px 40px;
     font-size: 12px;
   }
-  .btn-round{
+
+  .btn-round {
     padding: 16px 20px;
     margin-right: 5px;
 
   }
 
-  .btn-area-1{
+  .btn-area-1 {
     display: block;
   }
 
-  .btn-area-2{
+  .btn-area-2 {
     display: block;
   }
 
-  .card{
+  .card {
     box-shadow: rgb(0 0 0 / 12%) 0px 8px 24px 0px;
     padding: 15px;
     margin: 25px 15px 15px 15px;
@@ -1823,26 +1551,27 @@ opacity: 1;
 
   }
 
-  .icon-list{
+  .icon-list {
     display: inline-block;
     margin: 5px;
   }
 
-  .list-container{
+  .list-container {
     display: block;
     width: auto;
     word-break: break-word;
     width: 88%
   }
 
-  .list-block{
-  
+  .list-block {
+
     display: -webkit-box;
     padding: 0px;
     margin: 2px;
     word-break: break-word;
   }
-  .title-card{
+
+  .title-card {
     font-family: Poppins;
     font-weight: 500;
     font-size: 20px;
@@ -1851,7 +1580,8 @@ opacity: 1;
     margin: 0px;
     letter-spacing: 1px;
   }
-  .text-disclaimer{
+
+  .text-disclaimer {
     font-family: Poppins;
     font-size: 12px;
     margin: 0px;
@@ -1860,7 +1590,8 @@ opacity: 1;
     letter-spacing: 1px;
 
   }
-  .title-price{
+
+  .title-price {
     font-size: 16px;
     text-align: left;
     font-family: Poppins;
@@ -1871,10 +1602,10 @@ opacity: 1;
     text-rendering: optimizeLegibility;
     color: #000000;
     margin: 2px;
-    
+
   }
 
-  .question-block{
+  .question-block {
     display: block;
     width: 380px;
     text-align: left;
@@ -1885,48 +1616,614 @@ opacity: 1;
     opacity: 0.8;
   }
 
-  .question-text{
+  .question-text {
     font-size: 14px;
   }
 
-  .question-block:hover{
+  .question-block:hover {
     opacity: 1;
   }
 
-  .question-set{
+  .question-set {
     padding-top: 20px;
     padding-bottom: 40px;
   }
 
 
-  .question-container{
+  .question-container {
     display: inline-block;
     width: 85%;
     text-align: left;
   }
-  .question-icon{
+
+  .question-icon {
     display: inline-block;
     align-self: flex-end;
     align-self: baseline;
     vertical-align: top;
+    pointer-events: none;
   }
 
-  .card-container{
+  .card-container {
     padding-bottom: 40px;
     width: 70%;
   }
 
-  .card-title-set{
+  .card-title-set {
     padding: 25px 25px 0px 25px;
   }
 
-  .text-indication{
+  .text-indication {
     font-size: 12px;
     margin-left: calc(20% - 15px);
     position: absolute;
     top: 87%;
     font-weight: 400;
-  
+    display: none;
+
+  }
+
+
+
+
+}
+
+/* 
+  ##Device = Tablets, Ipads (landscape)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+
+  .cursor {
+    display: none;
+  }
+
+  .video-responsive {
+    overflow: hidden;
+    padding-bottom: 98.25%;
+    border-radius: 15px;
+    position: relative;
+    height: 0;
+  }
+
+  .video-responsive iframe {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+  }
+
+  /* CSS */
+  .foto {
+    background-color: transparent;
+    height: 100%;
+    width: 100%;
+  }
+
+  .foto2 {
+    background-image: url(/images/IMAGE1.jpg);
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+
+
+  }
+
+  .foto3 {
+    background-image:  url(/images/IMAGE3.jpg);
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+
+
+  }
+
+  .foto4 {
+    background-image:  url(/images/IMAGE2.png);
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+
+
+  }
+
+  .seq-canvas>* {
+    padding: 10px;
+    height: 90%;
+  }
+
+  .box-step {
+    max-width: 40%;
+    min-width: 40%;
+    height: 95%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+
+  .box-step-1 {
+    max-width: 40%;
+    min-width: 40%;
+    height: 400px;
+
+  }
+
+
+
+  .text-wrapper {
+    align-content: center;
+    text-align: center;
+    padding: 6%;
+
+  }
+
+  .title {
+    font-size: 20px;
+    line-height: 1.1;
+  }
+
+  .sub-title {
+    font-size: 18px;
+    line-height: 1.1;
+  }
+
+  .text {
+    font-size: 16px;
+    text-align: left;
+
+  }
+
+  .title-caption {
+    font-size: 16px;
+    text-align: left;
+  }
+
+  .text-caption {
+    font-size: 16px;
+    text-align: left;
+  }
+
+  .logo-vianney {
+    font-size: 57px;
+    margin-top: -11px;
+    margin-bottom: -8px;
+  }
+
+  .button-area {
+    display: block;
+  }
+
+  .dot-area {
+    display: none;
+  }
+
+  .btn-elipse {
+    font-size: 12px;
+    padding: 15px 20px;
+    letter-spacing: 1.2px;
+    display: inline-block;
+  }
+
+  .btn-elipse-lite {
+    padding: 15px 40px;
+    font-size: 12px;
+  }
+
+  .btn-round {
+    padding: 16px 20px;
+    margin-right: 5px;
+
+  }
+
+  .btn-area-1 {
+    display: block;
+  }
+
+  .btn-area-2 {
+    display: block;
+  }
+
+  .card {
+    box-shadow: rgb(0 0 0 / 12%) 0px 8px 24px 0px;
+    padding: 15px;
+    margin: 25px 15px 15px 15px;
+    border-radius: 15px;
+
+  }
+
+  .icon-list {
+    display: inline-block;
+    margin: 5px;
+  }
+
+  .list-container {
+    display: block;
+    width: auto;
+    word-break: break-word;
+  }
+
+  .list-block {
+
+    display: -webkit-box;
+    padding: 0px;
+    margin: 2px;
+    word-break: break-word;
+  }
+
+  .title-card {
+    font-family: Poppins;
+    font-weight: 500;
+    font-size: 20px;
+    text-align: left;
+    line-height: 1;
+    margin: 0px;
+    letter-spacing: 1px;
+  }
+
+  .text-disclaimer {
+    font-family: Poppins;
+    font-size: 12px;
+    margin: 0px;
+    font-weight: 400;
+    text-align: left;
+    letter-spacing: 1px;
+
+  }
+
+  .title-price {
+    font-size: 16px;
+    text-align: left;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.3;
+    letter-spacing: 0.05em;
+    text-rendering: optimizeLegibility;
+    color: #000000;
+    margin: 2px;
+
+  }
+
+  .question-block {
+    display: block;
+    width: 380px;
+    text-align: left;
+    margin: 10px;
+    padding: 18px;
+    border-bottom: 1px solid black;
+    transition: all 0.2 s ease-out;
+    opacity: 0.8;
+  }
+
+  .question-text {
+    font-size: 14px;
+  }
+
+  .question-block:hover {
+    opacity: 1;
+  }
+
+  .question-set {
+    padding-top: 20px;
+    padding-bottom: 40px;
+  }
+
+
+  .question-container {
+    display: inline-block;
+    width: 85%;
+    text-align: left;
+  }
+
+  .question-icon {
+    display: inline-block;
+    align-self: flex-end;
+    align-self: baseline;
+    vertical-align: top;
+    pointer-events: none;
+  }
+
+  .card-container {
+    padding-bottom: 40px;
+    width: 90%;
+
+  }
+
+  .card-title-set {
+    padding: 25px 25px 0px 25px;
+  }
+
+  .text-indication {
+    font-size: 12px;
+    margin-left: calc(20% - 15px);
+    position: absolute;
+    top: 87%;
+    font-weight: 400;
+    display: none;
+
+  }
+
+
+
+}
+
+/* 
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+
+@media (min-width: 481px) and (max-width: 767px) {
+
+  .cursor {
+    display: none;
+  }
+
+  .video-responsive {
+    overflow: hidden;
+    padding-bottom: 55%;
+    border-radius: 15px;
+    position: relative;
+    height: 0;
+  }
+
+  .video-responsive iframe {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+  }
+
+  /* CSS */
+  .foto {
+    background-color: transparent;
+    height: 100%;
+    width: 100%;
+
+  }
+
+  .foto2 {
+    background-image: url(/images/IMAGE1.jpg);
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+
+
+  }
+
+  .foto3 {
+    background-image:  url(/images/IMAGE3.jpg);
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+
+
+  }
+
+  .foto4 {
+    background-image:  url(/images/IMAGE2.png);
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+
+  }
+
+  .seq-canvas>* {
+    padding: 10px;
+    height: 25%;
+  }
+
+  .box-step {
+    max-width: 80%;
+    min-width: 40%;
+    overflow-y: scroll;
+    overflow-x: none;
+
+    height: calc(280% - 20px);
+  }
+
+  .box-step-1 {
+    max-width: 70%;
+    min-width: 70%;
+    height: 120%;
+
+  }
+
+
+
+  .text-wrapper {
+    align-content: center;
+    text-align: center;
+    padding: 6%;
+    margin-top: 30px;
+
+  }
+
+  .title {
+    font-size: 20px;
+    line-height: 1.1;
+  }
+
+  .sub-title {
+    font-size: 18px;
+    line-height: 1.1;
+  }
+
+  .text {
+    font-size: 16px;
+    text-align: left;
+
+  }
+
+  .title-caption {
+    font-size: 16px;
+    text-align: left;
+  }
+
+  .text-caption {
+    font-size: 16px;
+    text-align: left;
+  }
+
+  .logo-vianney {
+    font-size: 57px;
+    margin-top: -11px;
+    margin-bottom: -8px;
+  }
+
+  .button-area {
+    display: block;
+  }
+
+  .dot-area {
+    display: none;
+  }
+
+  .btn-elipse {
+    font-size: 12px;
+    padding: 15px 20px;
+    letter-spacing: 1.2px;
+    display: inline-block;
+  }
+
+  .btn-elipse-lite {
+    padding: 15px 40px;
+    font-size: 12px;
+  }
+
+  .btn-round {
+    padding: 16px 20px;
+    margin-right: 5px;
+
+  }
+
+  .btn-area-1 {
+    display: block;
+  }
+
+  .btn-area-2 {
+    display: block;
+  }
+
+  .card {
+    box-shadow: rgb(0 0 0 / 12%) 0px 8px 24px 0px;
+    padding: 15px;
+    margin: 25px 15px 15px 15px;
+    border-radius: 15px;
+
+  }
+
+  .icon-list {
+    display: inline-block;
+    margin: 5px;
+  }
+
+  .list-container {
+    display: block;
+    width: auto;
+    word-break: break-word;
+    width: 88%
+  }
+
+  .list-block {
+
+    display: -webkit-box;
+    padding: 0px;
+    margin: 2px;
+    word-break: break-word;
+  }
+
+  .title-card {
+    font-family: Poppins;
+    font-weight: 500;
+    font-size: 20px;
+    text-align: left;
+    line-height: 1;
+    margin: 0px;
+    letter-spacing: 1px;
+  }
+
+  .text-disclaimer {
+    font-family: Poppins;
+    font-size: 12px;
+    margin: 0px;
+    font-weight: 400;
+    text-align: left;
+    letter-spacing: 1px;
+
+  }
+
+  .title-price {
+    font-size: 16px;
+    text-align: left;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.3;
+    letter-spacing: 0.05em;
+    text-rendering: optimizeLegibility;
+    color: #000000;
+    margin: 2px;
+
+  }
+
+  .question-block {
+    display: block;
+    width: 380px;
+    text-align: left;
+    margin: 10px;
+    padding: 18px;
+    border-bottom: 1px solid black;
+    transition: all 0.2 s ease-out;
+    opacity: 0.8;
+  }
+
+  .question-text {
+    font-size: 14px;
+  }
+
+  .question-block:hover {
+    opacity: 1;
+  }
+
+  .question-set {
+    padding-top: 20px;
+    padding-bottom: 40px;
+  }
+
+
+  .question-container {
+    display: inline-block;
+    width: 85%;
+    text-align: left;
+  }
+
+  .question-icon {
+    display: inline-block;
+    align-self: flex-end;
+    align-self: baseline;
+    vertical-align: top;
+    pointer-events: none;
+  }
+
+  .card-container {
+    padding-bottom: 40px;
+    width: 70%;
+  }
+
+  .card-title-set {
+    padding: 25px 25px 0px 25px;
+  }
+
+  .text-indication {
+    font-size: 12px;
+    margin-left: calc(20% - 15px);
+    position: absolute;
+    top: 87%;
+    font-weight: 400;
+    display: none;
+
   }
 
 
@@ -1941,33 +2238,34 @@ opacity: 1;
 
 @media (min-width: 320px) and (max-width: 480px) {
 
-  .cursor{
+  .cursor {
     display: none;
   }
 
-  .text-indication{
+  .text-indication {
     font-size: 9px;
     margin-left: calc(14% - 15px);
     position: absolute;
     top: 85%;
     font-weight: 400;
-  
+    display: none;
   }
 
-  .video-responsive{
-    overflow:hidden;
+  .video-responsive {
+    overflow: hidden;
     padding-bottom: 60%;
     border-radius: 15px;
-    position:relative;
-    height:0;
-}
-.video-responsive iframe{
-    left:0;
-    top:0;
-    height:100%;
-    width:100%;
-    position:absolute;
-}
+    position: relative;
+    height: 0;
+  }
+
+  .video-responsive iframe {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+  }
 
   .foto {
     background-color: transparent;
@@ -1976,14 +2274,14 @@ opacity: 1;
   }
 
   .foto2 {
-    background-image: url(https://i.ibb.co/QHXCdGS/afiliacion.jpg);
+    background-image: url(/images/IMAGE1.jpg);
     width: 60%;
     background-size: cover;
 
   }
 
   .foto3 {
-    background-image: url(https://i.ibb.co/RQcfn0w/pf.jpg);
+    background-image:  url(/images/IMAGE3.jpg);
     width: 60%;
     background-size: cover;
     background-position: center;
@@ -1992,22 +2290,22 @@ opacity: 1;
   }
 
   .foto4 {
-    background-image: url(https://i.ibb.co/RyrRTZ2/image-2.png);
+    background-image:  url(/images/IMAGE2.png);
     width: 60%;
     background-size: cover;
-  
+
 
 
   }
-  
-  
+
+
   .seq-canvas>* {
     padding: 10px;
     height: 25%;
   }
 
   .box-step-1 {
-  
+
     min-width: 90%;
     height: 130%;
   }
@@ -2020,7 +2318,7 @@ opacity: 1;
     height: calc(280% - 20px);
   }
 
-  
+
 
   .text-wrapper {
     align-content: center;
@@ -2045,12 +2343,12 @@ opacity: 1;
 
   }
 
-  .title-caption{
+  .title-caption {
     font-size: 14px;
     text-align: left;
   }
 
-  .text-caption{
+  .text-caption {
     font-size: 14px;
     text-align: left;
   }
@@ -2075,25 +2373,27 @@ opacity: 1;
     letter-spacing: 1.2px;
     display: inline-block;
   }
-  .btn-elipse-lite{
+
+  .btn-elipse-lite {
     padding: 15px 40px;
     font-size: 12px;
   }
-  .btn-round{
+
+  .btn-round {
     padding: 16px 20px;
     margin-right: 5px;
 
   }
 
-  .btn-area-1{
+  .btn-area-1 {
     display: block;
   }
 
-  .btn-area-2{
-    display:  block;
+  .btn-area-2 {
+    display: block;
   }
 
-  .card{
+  .card {
     box-shadow: rgb(0 0 0 / 12%) 0px 8px 24px 0px;
     padding: 15px;
     margin: 25px 15px 15px 15px;
@@ -2101,26 +2401,26 @@ opacity: 1;
 
   }
 
-  .icon-list{
+  .icon-list {
     display: inline-block;
     margin: 5px;
   }
 
-  .list-container{
+  .list-container {
     display: block;
     width: auto;
     word-break: break-word;
     width: 88%
   }
 
-  .list-block{
+  .list-block {
     word-break: break-word;
     display: -webkit-box;
     padding: 0px;
     margin: 2px;
   }
 
-  .title-card{
+  .title-card {
     font-family: Poppins;
     font-weight: 500;
     font-size: 20px;
@@ -2129,7 +2429,8 @@ opacity: 1;
     margin: 0px;
     letter-spacing: 1px;
   }
-  .text-disclaimer{
+
+  .text-disclaimer {
     font-family: Poppins;
     font-size: 12px;
     margin: 0px;
@@ -2138,7 +2439,8 @@ opacity: 1;
     letter-spacing: 1px;
 
   }
-  .title-price{
+
+  .title-price {
     font-size: 16px;
     text-align: left;
     font-family: Poppins;
@@ -2149,10 +2451,10 @@ opacity: 1;
     text-rendering: optimizeLegibility;
     color: #000000;
     margin: 2px;
-    
+
   }
 
-  .question-block{
+  .question-block {
     display: block;
     width: 250px;
     text-align: left;
@@ -2163,37 +2465,39 @@ opacity: 1;
     opacity: 0.8;
   }
 
-  .question-text{
+  .question-text {
     font-size: 12px;
   }
 
-  .question-block:hover{
+  .question-block:hover {
     opacity: 1;
   }
 
-  .question-set{
+  .question-set {
     padding-top: 20px;
     padding-bottom: 40px;
   }
 
 
-  .question-container{
+  .question-container {
     display: inline-block;
     width: 85%;
     text-align: left;
   }
-  .question-icon{
+
+  .question-icon {
     display: inline-block;
     align-self: flex-end;
     align-self: baseline;
     vertical-align: top;
+    pointer-events: none;
   }
 
-  .card-container{
+  .card-container {
     padding-bottom: 40px;
   }
 
-  .card-title-set{
+  .card-title-set {
     padding: 25px 25px 0px 25px;
   }
 
@@ -2263,7 +2567,7 @@ opacity: 1;
 
 }
 
-.question-text{
+.question-text {
   font-family: Poppins;
   font-style: normal;
   font-weight: normal;
@@ -2278,7 +2582,7 @@ opacity: 1;
 
 }
 
-.title-caption{
+.title-caption {
   font-family: Poppins;
   font-style: normal;
   font-weight: 500;
@@ -2289,7 +2593,7 @@ opacity: 1;
   margin: 0px;
 }
 
-.text-caption{
+.text-caption {
   font-family: Poppins;
   font-style: normal;
   font-weight: normal;
@@ -2390,6 +2694,3 @@ opacity: 1;
     opacity: 0;
   }
 }
-
-
-

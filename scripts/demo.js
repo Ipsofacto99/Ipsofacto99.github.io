@@ -7,57 +7,87 @@
 function btnPosition() {
   var display = screen.width;
   if (display < 500) {
-    console.log("hola")
-
-   
-    $( ".btn-container-2" ).remove();
+    $(".btn-container-2").remove();
     $(".btn-area-2").append(`<button type="button" aria-label="Next" class="btn-elipse">Comenzar proceso de afiliación</button>`);
     $(".btn-area-2").fadeIn();
     $(".btn-area-1").fadeIn();
-
-  }else{
-
-    $( ".btn-container" ).remove();
+  } else {
+    $(".btn-container").remove();
     $(".btn-area-1").append(`<button type="button" aria-label="Next" class="btn-elipse">Comenzar proceso de afiliación</button>`);
     $(".btn-area-2").fadeIn();
     $(".btn-area-1").fadeIn();
 
-    
-
   }
 }
 
-var nameArr = ["Kits de afiliación","Preguntas Frecuentes","Volver al Inicio","Beneficios de Afiliarse"];
-
- 
-
-  $("#btn-name").click(function () { 
-    $("#btn-name").text(nameArr[0]);
-    nameArr.push(nameArr.splice(0, 1)[0]);
-    console.log(nameArr)
-
-    
-  });
+var nameArr = ["Kits de afiliación", "Preguntas Frecuentes", "Volver al Inicio", "Beneficios de Afiliarse"];
 
 
-  var rotation = false;
 
-  $('.question-container').click(function(){
-    $(this).children('div').toggle()
+$("#btn-name").click(function () {
+  $("#btn-name").text(nameArr[0]);
+  nameArr.push(nameArr.splice(0, 1)[0]);
+});
 
-if (rotation == false) {
-  $(this).siblings('div').css({'transform' : 'rotate('+ 180 +'deg)'});
-  rotation = true;
-} else {
-  $(this).siblings('div').css({'transform' : 'rotate('+ 0 +'deg)'});
-  rotation = false;
-}
+$(".text-indication").click(function () {
+  $('.icon-list-2').css({"animation-name": "spin" });
+  $("#back").text("REGRESANDO A VIANNEY...");
+  window.location.href='https://www.vianney.com.mx';
+});
 
 
-    
+$("#AFI-PAGE1").click(function () {
 
-    
-    ;})
+});
+
+$("#AFI-PAGE2").click(function () {
+
+});
+
+$("#AFI-PAGE3-F").click(function () {
+
+});
+
+
+$("#AFI-PAGE3-D").click(function () {
+
+});
+
+
+var rotation = false;
+
+
+$(".question-block").click(function () {
+  $(this).children('.question-container').click()
+})
+
+$(".horasi").click(function () {
+  console.log("hola")
+})
+
+
+
+
+
+
+
+$('.question-container').click(function () {
+  $(this).children('div').toggle()
+
+  if (rotation == false) {
+    $(this).siblings('div').css({
+      'transform': 'rotate(' + 180 + 'deg)'
+    });
+    rotation = true;
+  } else {
+    $(this).siblings('div').css({
+      'transform': 'rotate(' + 0 + 'deg)'
+    });
+    rotation = false;
+  }
+
+  ;
+})
 
 
 var sequenceElement = document.getElementById("sequence");
@@ -99,10 +129,3 @@ $('.sub-title').hover(function () {
 
 )
 
-$('.foto').hover(function () {
-
-    $(this).removeClass("animate__animated");
-
-  }
-
-)
