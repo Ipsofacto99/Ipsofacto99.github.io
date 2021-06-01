@@ -6,7 +6,7 @@
 
 
 
-var nameArr = ["Beneficios de Afiliarse", "Kits de afiliación", "Preguntas Frecuentes", "Volver al Inicio"];
+var nameArr = ["Detras del diseño", "Desarrollo del producto", "Información técnica", "Volver al Inicio"];
 var namePos = 0;
 
 

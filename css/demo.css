@@ -219,9 +219,11 @@ button {
   font-style: normal;
   font-weight: normal;
   text-rendering: optimizeLegibility;
-  text-align: left;
+  text-align: center;
   letter-spacing: 0.05em;
   margin: 0px;
+  line-height: 1.4 !important;
+  margin-top: 10px;
 
 
 }
@@ -523,9 +525,12 @@ button {
 }
 
 .foto {
-
+  background-image: url(/images/IMAGE0.jpg);
   background-position: right;
   transition: ease-in;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
 
 }
 
@@ -650,8 +655,8 @@ button {
   }
 
   .logo-vianney {
-    font-size: 64px;
-    margin-top: -11px;
+    font-size: 104px;
+    margin-top: -16px;
     margin-bottom: -8px;
   }
 
@@ -948,8 +953,8 @@ object {
   }
 
   .logo-vianney {
-    font-size: 56px;
-    margin-top: -11px;
+    font-size: 96px;
+    margin-top: -16px;
     margin-bottom: -8px;
   }
 
@@ -1235,8 +1240,8 @@ object {
   }
 
   .logo-vianney {
-    font-size: 57px;
-    margin-top: -11px;
+    font-size: 97px;
+    margin-top: -16px;
     margin-bottom: -8px;
   }
 
@@ -1517,8 +1522,8 @@ object {
   }
 
   .logo-vianney {
-    font-size: 57px;
-    margin-top: -11px;
+    font-size: 97px;
+    margin-top: -16px;
     margin-bottom: -8px;
   }
 
@@ -1802,8 +1807,8 @@ object {
   }
 
   .logo-vianney {
-    font-size: 57px;
-    margin-top: -11px;
+    font-size: 97px;
+    margin-top: -16px;
     margin-bottom: -8px;
   }
 
@@ -2088,8 +2093,8 @@ object {
   }
 
   .logo-vianney {
-    font-size: 57px;
-    margin-top: -11px;
+    font-size: 97px;
+    margin-top: -16px;
     margin-bottom: -8px;
   }
 
@@ -2386,8 +2391,8 @@ object {
   }
 
   .logo-vianney {
-    font-size: 57px;
-    margin-top: -11px;
+    font-size: 97px;
+    margin-top: -16px;
     margin-bottom: -8px;
   }
 
@@ -2545,15 +2550,16 @@ object {
 
 .btn-elipse-lite {
   box-shadow: 2px 2px 7px 5px rgba(90, 74, 223, 0.06), inset 8px 8px 15px 18px rgba(90, 74, 223, 0.06);
-  background: #EDE3EC;
+  background: #6FCF97;
   border-radius: 30px;
   border: 0;
   outline: none;
   transition: all 0.5s ease-out;
-  color: #000000;
-  font-family: "Montserrat";
+  color: #fff;
+  font-family: "Poppins";
   text-transform: uppercase;
-  font-weight: 600;
+  font-weight: 500;
+  letter-spacing: 1px;
 }
 
 .btn-elipse {
@@ -2571,9 +2577,9 @@ object {
 
 .btn-round {
   box-shadow: 2px 2px 7px 5px rgba(90, 74, 223, 0.06), inset 8px 8px 15px 18px rgba(90, 74, 223, 0.06);
-  background: #EDE3EC;
+  background: #6FCF97;
   outline: none;
-  color: #000000;
+  color: #fff;
   font-family: "poppins";
   border-radius: 25px;
   font-weight: 400;
@@ -2641,8 +2647,8 @@ object {
 
 
 .logo-vianney {
-  font-family: 'Sequel Sans';
-  color: #5D175A;
+  font-family: 'Poppins';
+  color: #008c4b;
   text-align: left;
   display: block;
 
