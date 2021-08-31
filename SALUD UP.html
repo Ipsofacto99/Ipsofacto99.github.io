@@ -1,0 +1,1129 @@
+<!DOCTYPE html>
+<!-- saved from url=(0043)https://saludup.up.edu.mx/mod_01_cuest.html -->
+<html lang="es"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>SALUD UP</title>
+		
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="msapplication-tap-highlight" content="no">
+		<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+
+		<!-- Arquitecture -->
+		<link href="./SALUD UP_files/fontawesome.min.css" rel="stylesheet">
+		<link href="./SALUD UP_files/solid.min.css" rel="stylesheet">
+		<link href="./SALUD UP_files/bootstrap.min.css" rel="stylesheet">
+		<link href="./SALUD UP_files/style.css" rel="stylesheet">
+		<link href="./SALUD UP_files/stylesheet.css" rel="stylesheet">
+		<link href="./SALUD UP_files/jquery-confirm.min.css" rel="stylesheet">
+		<script src="./SALUD UP_files/jquery.min.js.descarga"></script>
+		<script src="./SALUD UP_files/jquery.base64.js.descarga"></script>
+		<script src="./SALUD UP_files/jquery-confirm.min.js.descarga"></script>
+		<script src="./SALUD UP_files/bootstrap.min.js.descarga"></script>
+		<script src="./SALUD UP_files/scripts.js.descarga"></script>
+		<script src="./SALUD UP_files/tim.js.descarga"></script>
+		<script src="./SALUD UP_files/sjcl.js.descarga"></script>
+		<script src="./SALUD UP_files/sha1.js.descarga"></script>
+		<script src="./SALUD UP_files/sha256.js.descarga"></script>
+		
+		<!-- Utilities -->
+		<script src="./SALUD UP_files/incAjax.js.descarga"></script>
+		<script src="./SALUD UP_files/incUtils.js.descarga"></script>
+	</head>
+
+	<body>
+		<div class="container-fluid p-0">
+			<header style="background-color:#24428C;color:#ffffff;padding:10px;">
+				<div class="row">
+					<div class="col-md-1">&nbsp;</div>
+					<div class="col-md-3 text-center">
+						<a href="https://saludup.up.edu.mx/index.html">
+							<img class="img img-fluid" src="./SALUD UP_files/00_tit_esc.png">
+						</a>
+						<div class="d-sm-block d-md-none"><br></div>
+					</div>
+					<div class="col-md-4 text-center">
+						<span class="maintitle"><b>CUESTIONARIO</b></span>
+						<div class="d-sm-block d-md-none"><br></div>
+					</div>
+					<div class="col-md-3 text-center">
+						<br>
+						<img class="img img-fluid" src="./SALUD UP_files/00_tit_fcs.png">
+					</div>
+					<div class="col-md-1">&nbsp;</div>
+				</div>
+			</header>
+		</div>
+
+		<div id="MyModalPanel" class="modal-panel-loading" style="display: none;">
+			<div class="modal-panel-content">
+				<div class="modal-panel-container-flex">
+					<div class="modal-panel-container-flex-box">
+						
+					</div>
+					<div class="modal-panel-container-flex-box">
+						<h1>Espere un momento.</h1>
+					</div>
+					<div class="modal-panel-container-flex-box">
+						<img id="loader" src="./SALUD UP_files/loading.gif">
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			
+			<div class="row">
+				<div class="col-md-1 text-center">&nbsp;</div>
+			
+				<div class="col-md-10">
+				
+									<br>				<div class="card">					<div class="card-header text-center" style="background-color:#027B02;color:#FFFFFF;">						<br>						<h1><b>Puede ingresar al campus</b></h1>						<br>					</div>					<div class="card-body text-center" style="background-color:#80BD80;color:#FFFFFF; font-family: Montserrat;
+									font-weight: 300;">						<br>						<br>						<h3>							</h3><h1><p>Fecha:<span class="mydate"> My fecha</span><br> Hora:<span class="myhour">My Hora</span></p></h1>							<br>							<h1 class="myname">José Pablo Cisneros López </h1>							<br>							<b>							Su estado es conveniente para ingresar a la Universidad.							<br><br>							</b><br>												<br>						<br>					</div>				</div>			
+
+					<div id="d_terms_cond" style="display: none;">
+						<br>
+						<div class="card">
+							<div class="card-header" style="background-color:#6D88A3;color:#FFFFFF;">
+								<span class="mybold">Agradecemos leer los siguientes documentos para poder responder tu cuestionario de ingreso al campus:</span><br>
+							</div>
+							<div class="card-body">
+								<div class="row">
+
+									<div class="col-md-5">
+										<div class="card" id="cardCarta" style="display: none;">
+											<div class="card-body text-center" style="background-color:#24428C;color:#FFFFFF;">
+												<h3>
+													<b>Carta de conformidad</b>
+												</h3>
+												<br>
+												<button type="button" class="btn btn-info" id="b_carta" onclick="location.href = &#39;mod_01_carta.html&#39;;">CONSULTAR</button>
+											</div>
+										</div>
+									</div>
+
+									<div class="col-md-2"></div>
+
+									<div class="col-md-5">
+										<div class="card" id="cardReglamento" style="display: none;">
+											<div class="card-body text-center" style="background-color:#24428C;color:#FFFFFF;">
+												<h3>
+													<b>Reglamento general</b>
+												</h3>
+												<br>
+												<button type="button" class="btn btn-info" id="b_reglamento" onclick="location.href = &#39;mod_01_reglamento.html&#39;;">CONSULTAR</button>
+											</div>
+										</div>
+									</div>
+
+								</div>
+
+								
+
+								<div class="row mt-4">
+									<div class="col-md-3"></div>
+
+									<div class="col-md-6">
+										<div class="card" id="cardCuestionario" style="">
+											<div class="card-body text-center" style="background-color:#24428C;color:#FFFFFF;">
+												<h3>
+													<b>Responder cuestionario</b>
+												</h3>
+												<br>
+												<button type="button" class="btn btn-info" id="b_show_questions" onclick="MostrarCuestionarioNuevo()">RESPONDER</button>
+											</div>
+										</div>
+									</div>
+
+									<div class="col-md-3"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div id="d_newcuest" style="display:none;">
+						<br>
+						<div class="card">
+							<div class="card-header" style="background-color:#6D88A3;color:#FFFFFF;">
+								<span class="mybold">Favor de responder las siguientes preguntas</span><br>
+							</div>
+							<div class="card-body">
+								<div id="div_newquestion1">
+									<h4>1.- ¿ Actualmente tienes uno de estos síntomas ?</h4>
+									<small>(Señale todos los que apliquen)</small><br><br>
+
+									<div class="custom-control custom-switch" style="margin-bottom:10px;">
+										<input type="checkbox" id="np_1a" class="custom-control-input" onclick="prOnChangeFirstQuestion(&#39;np_1a&#39;)">
+										<label class="custom-control-label" for="np_1a">Fiebre igual o mayor a 38ºC</label>
+									</div>
+									<div class="custom-control custom-switch" style="margin-bottom:10px;" onclick="prOnChangeFirstQuestion(&#39;np_1b&#39;)">
+										<input type="checkbox" id="np_1b" class="custom-control-input">
+										<label class="custom-control-label" for="np_1b">Dificultad al respirar</label>
+									</div>
+									<div class="custom-control custom-switch" style="margin-bottom:10px;" onclick="prOnChangeFirstQuestion(&#39;np_1c&#39;)">
+										<input type="checkbox" id="np_1c" class="custom-control-input">
+										<label class="custom-control-label" for="np_1c">Escalofríos</label>
+									</div>
+									<div class="custom-control custom-switch" style="margin-bottom:10px;" onclick="prOnChangeFirstQuestion(&#39;np_1d&#39;)">
+										<input type="checkbox" id="np_1d" class="custom-control-input">
+										<label class="custom-control-label" for="np_1d">Tos</label>
+									</div>
+									<div class="custom-control custom-switch" style="margin-bottom:10px;" onclick="prOnChangeFirstQuestion(&#39;np_1e&#39;)">
+										<input type="checkbox" id="np_1e" class="custom-control-input">
+										<label class="custom-control-label" for="np_1e">Pérdida del sentido de gusto u olfato</label>
+									</div>
+									<div class="custom-control custom-switch" style="margin-bottom:10px;" onclick="prOnChangeFirstQuestion(&#39;np_1m&#39;)">
+										<input type="checkbox" id="np_1m" class="custom-control-input">
+										<label class="custom-control-label" for="np_1m">Ninguna de las anteriores</label>
+									</div>
+								</div>
+
+								<br>
+								<div id="div_newquestion2">
+									<h4>2.- ¿ Actualmente tienes uno de estos síntomas ?</h4>
+									<small>(Señale todos los que apliquen)</small><br><br>
+
+									<div class="custom-control custom-switch" style="margin-bottom:10px;" onclick="prOnChangeFirstQuestion(&#39;np_2a&#39;)">
+										<input type="checkbox" id="np_2a" class="custom-control-input">
+										<label class="custom-control-label" for="np_2a">Dolor de garganta </label>
+									</div>
+									<div class="custom-control custom-switch" style="margin-bottom:10px;" onclick="prOnChangeFirstQuestion(&#39;np_2b&#39;)">
+										<input type="checkbox" id="np_2b" class="custom-control-input">
+										<label class="custom-control-label" for="np_2b">Fatiga</label>
+									</div>
+									<div class="custom-control custom-switch" style="margin-bottom:10px;" onclick="prOnChangeFirstQuestion(&#39;np_2c&#39;)">
+										<input type="checkbox" id="np_2c" class="custom-control-input">
+										<label class="custom-control-label" for="np_2c">Dolor de cabeza</label>
+									</div>
+									<div class="custom-control custom-switch" style="margin-bottom:10px;" onclick="prOnChangeFirstQuestion(&#39;np_2d&#39;)">
+										<input type="checkbox" id="np_2d" class="custom-control-input">
+										<label class="custom-control-label" for="np_2d">Dolor de cuerpo o muscular</label>
+									</div>
+									<div class="custom-control custom-switch" style="margin-bottom:10px;" onclick="prOnChangeFirstQuestion(&#39;np_2e&#39;)">
+										<input type="checkbox" id="np_2e" class="custom-control-input">
+										<label class="custom-control-label" for="np_2e">Náuseas o vómito</label>
+									</div>
+									<div class="custom-control custom-switch" style="margin-bottom:10px;" onclick="prOnChangeFirstQuestion(&#39;np_2f&#39;)">
+										<input type="checkbox" id="np_2f" class="custom-control-input">
+										<label class="custom-control-label" for="np_2f">Diarrea</label>
+									</div>
+									<div class="custom-control custom-switch" style="margin-bottom:10px;" onclick="prOnChangeFirstQuestion(&#39;np_2m&#39;)">
+										<input type="checkbox" id="np_2m" class="custom-control-input">
+										<label class="custom-control-label" for="np_2m">Ninguna de las anteriores</label>
+									</div>
+								</div>
+
+								<br>
+								<div id="div_newquestion3">
+									<h4>3.- ¿ Has regresado de algún viaje internacional en los últimos 14 días ?</h4><br><br>
+
+									<div class="custom-control custom-switch" style="margin-bottom:10px;">
+										<input type="radio" id="np_3a" name="np_3" class="custom-control-input" value="S" onclick="prOnChangeFirstQuestion(&#39;np_3a&#39;)">
+										<label class="custom-control-label" for="np_3a">Sí</label>
+									</div>
+									<div class="custom-control custom-switch" style="margin-bottom:10px;">
+										<input type="radio" id="np_3b" name="np_3" class="custom-control-input" value="N" onclick="prOnChangeFirstQuestion(&#39;np_3b&#39;)">
+										<label class="custom-control-label" for="np_3b">No</label>
+									</div>
+								</div>
+
+								<br>
+								<div id="div_newquestion4">
+									<h4>4.- ¿ Eres un contacto cercano de alguna persona que padece COVID-19 confirmado ?</h4>
+									<small>(Se considera un contacto estrecho o de riesgo, a cualquier persona que haya compartido espacio con el caso confirmado, a una distancia menor a 2 metros alrededor del caso, durante más de 15 minutos acumulados durante un periodo de 24 horas, salvo que se pueda ASEGURAR que se ha hecho un uso adecuado del cubrebocas).</small><br><br>
+
+									<div class="custom-control custom-switch" style="margin-bottom:10px;">
+										<input type="radio" id="np_4a" name="np_4" class="custom-control-input" value="S" onclick="prOnChangeFirstQuestion(&#39;np_4a&#39;)">
+										<label class="custom-control-label" for="np_4a">Sí</label>
+									</div>
+									<div class="custom-control custom-switch" style="margin-bottom:10px;">
+										<input type="radio" id="np_4b" name="np_4" class="custom-control-input" value="N" onclick="prOnChangeFirstQuestion(&#39;np_4b&#39;)">
+										<label class="custom-control-label" for="np_4b">No</label>
+									</div>
+								</div>
+								
+								<br>
+								<div class="text-center">
+									<button style="display: none;" type="button" class="btn btn-outline-info" id="b_neweval" onclick="javascript:prEvaluarNuevoCuestionario();">Evaluar</button>
+									<div id="mssgs_01"></div>
+								</div>
+								<br>
+								<br>
+
+								<div class="text-center">
+									<button type="button" class="btn btn-outline-warning" id="b_infopop" onclick="javascript:prShowInfoForCovid();">Para mayor información, pulse aquí</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+				
+				<div class="col-md-1 text-center">&nbsp;</div>
+			</div>
+		
+			<br>
+			<br>
+			<p class="text-right">
+				<a id="b_remove" href="https://saludup.up.edu.mx/mod_01_cuest.html#" style="color:#FFFFFF;">.........</a>
+			</p>
+
+		</div>
+		
+		<footer class="page-footer" style="background-image:url(&#39;./images/00_footer_bck.png&#39;);">
+			<img class="img" src="./SALUD UP_files/00_footer.png">
+		</footer>
+		
+		<script type="text/javascript" src="./SALUD UP_files/cordova.js.descarga"></script>
+		<script type="text/javascript" src="./SALUD UP_files/index.js.descarga"></script>
+		<script type="text/javascript">
+			app.initialize();
+			var gDays  = 30;
+			var gDebug = true;
+			var gRemove = false;
+		
+			var lTmpRes = '\
+				<br>\
+				<div class="card">\
+					<div class="card-header text-center" style="background-color:#{{pCol01}};color:#FFFFFF;">\
+						<br>\
+						<h1><b>{{pTitle}}</b></h1>\
+						<br>\
+					</div>\
+					<div class="card-body text-center" style="background-color:#{{pCol02}};color:#FFFFFF;">\
+						<br>\
+						<br>\
+						<h3>\
+							<h1><b>{{pDate}}</b></h1>\
+							<br>\
+							<h1><b>{{pName}}</b></h1>\
+							<br>\
+							<b>{{pMssg}}</b><br>\
+						</h3>\
+						<br>\
+						<br>\
+					</div>\
+				</div>\
+			';
+			
+			function fnGetDate(pFull)
+			{
+				var now = new Date(),
+				y = now.getFullYear(),
+				o = now.getMonth() + 1,
+				d = now.getDate(),
+				h = now.getHours(),
+				m = now.getMinutes(),
+				s = now.getSeconds();
+
+				if (o < 10) o = '0' + o;
+				if (m < 10) m = '0' + m;
+				if (s < 10) s = '0' + s;
+				
+				var lDate = '<b>Fecha:</b> ' + y + '-' + o + '-' + d;
+				if (pFull == true) 
+					lDate += '<br> <b>Hora:</b> ' + h + ':' + m ;
+				return lDate;
+			} // fnGetDate
+			
+			function prShowSemaphore(pType)
+			{
+				var lData = null;
+				const lDatew = localStorage.getItem('date');
+				const lNAme = localStorage.getItem('nombre_semaforo');
+				console.log(lDatew);
+				if (pType == 'res_ok')
+					lData = {
+						pID:	"d_res",
+						pCol01:	"027B02",
+						pCol02:	"80BD80",
+						pTitle:	"Puede ingresar al campus",
+						pMssg:	'\
+							Su estado es conveniente para ingresar a la Universidad.\
+							<br><br>\
+							',
+						pDate:	lDatew,
+						pName: lNAme
+					};
+				else
+				if (pType == 'res_check')
+					lData = {
+						pID:	"d_res",
+						pCol01:	"9A0602",
+						pCol02:	"CC8280",
+						pTitle:	"Advertencia",
+						pMssg:	"Acuda al Módulo de Evaluación COVID cumpliendo distanciamiento social, con CUBREBOCAS, sin tocar superficies.",
+						pDate:	lDatew,
+						pName: lNAme
+					};
+				else
+				if (pType == 'res_home')
+					lData = {
+						pID:	"d_res",
+						pCol01:	"9A0602",
+						pCol02:	"CC8280",
+						pTitle:	"Permanezca en casa",
+						pMssg:	`Si est&aacute;s en casa, qu&eacute;date en casa y contacta a tu coordinador.
+								<br><br>
+								En caso de estar en la universidad, dir&iacute;gete al m&oacute;dulo de evaluaci&oacute;n COVID`,
+						pDate:	lDatew,
+						pName: lNAme
+					};
+				else
+				if (pType == 'res_suspicious')
+					lData = {
+						pID:	"d_res",
+						pCol01:	"9A0602",
+						pCol02:	"CC8280",
+						pTitle:	"Caso Sospechoso",
+						pMssg:	"Comun&iacute;quese con su m&eacute;dico a la brevedad posible.<br>No acuda al campus.<br>Comun&iacute;quese con su coordinador COVID del &aacute;rea.",
+						pDate:	lDatew,
+						pName: lNAme
+					};
+				else
+				if (pType == 'res_urgent')
+					lData = {
+						pID:	"d_res",
+						pCol01:	"9A0602",
+						pCol02:	"CC8280",
+						pTitle:	"Sugerimos acuda a Urgencias",
+						pMssg:	"&oacute; comun&iacute;quese con su m&eacute;dico a la brevedad posible.<br>No acuda al campus.<br>Comun&iacute;quese con su coordinador COVID del &aacute;rea.",
+						pDate:	lDatew,
+						pName: lNAme
+					};
+				
+				prTIMReplace(lTmpRes, lData);
+			} // prShowSemaphore
+
+			const prShowInfoForCovid = () => {
+				$.alert({
+					title: '',
+					type: 'orange',
+					columnClass: 'col-md-12',
+    				typeAnimated: true,
+					content: `
+						<h3>Síntomas COVID</h3>
+						<a href="https://www.cdc.gov/coronavirus/2019-ncov/symptoms-testing/symptoms.html" target="_blank">https://www.cdc.gov/coronavirus/2019-ncov/symptoms-testing/symptoms.html</a>
+						<br>&bull; Lancet. 2020;395(10223):497. Epub 2020 Jan 24.
+						<br>&bull; Lancet. 2020;395(10223):507. Epub 2020 Jan 30.
+						<br>&bull; N Engl J Med. 2020;382(18):1708. Epub 2020 Feb 28. 
+						<br>&bull; MMWR Morb Mortal Wkly Rep. 2020;69(24):759. Epub 2020 Jun 19. 
+						<br>&bull; Gastroenterology. 2020;159(1):81. Epub 2020 Apr 3. 
+
+						<br>
+						<br>
+						<h3>Viaje</h3>
+						<a href="https://www.cdc.gov/coronavirus/2019-ncov/travelers/index.html" target="_blank">https://www.cdc.gov/coronavirus/2019-ncov/travelers/index.html</a>
+						<br>&bull; Emerg Infect Dis. 2020;26(11):2617. Epub 2020 Sep 18. 
+						<br>&bull; Lancet Infect Dis. 2020;20(8):911. Epub 2020 Apr 27.
+
+						<br>
+						<br>
+						<h3>Contacto con casos COVID y Transmisión</h3>
+						<a href="https://www.cdc.gov/coronavirus/2019-ncov/php/contact-tracing/contact-tracing-plan/contact-tracing.html" target="_blank">https://www.cdc.gov/coronavirus/2019-ncov/php/contact-tracing/contact-tracing-plan/contact-tracing.html</a>
+						<br>&bull; Lancet Infect Dis. 2020;20(5):565. Epub 2020 Mar 23. 
+						<br>&bull; Nat Med. 2020;26(5):672. Epub 2020 Apr 15. 
+						<br>&bull; Ann Intern Med. 2021;174(1):69. Epub 2020 Sep 17. 
+					`,
+				});
+			}
+
+			const prOnChangeFirstQuestion = id => {
+				if ( id.includes("1") ) {
+					if (id.includes("m")) {
+						$("#np_1a").prop("checked", false);
+						$("#np_1b").prop("checked", false);
+						$("#np_1c").prop("checked", false);
+						$("#np_1d").prop("checked", false);
+						$("#np_1e").prop("checked", false);
+					} else {
+						$("#np_1m").prop("checked", false);
+					}
+				}
+				if ( id.includes("2") ) {
+					if (id.includes("m")) {
+						$("#np_2a").prop("checked", false);
+						$("#np_2b").prop("checked", false);
+						$("#np_2c").prop("checked", false);
+						$("#np_2d").prop("checked", false);
+						$("#np_2e").prop("checked", false);
+						$("#np_2f").prop("checked", false);
+					} else {
+						$("#np_2m").prop("checked", false);
+					}
+				}
+
+				const restr1 = $('#np_1a').is(':checked') || $('#np_1b').is(':checked') || $('#np_1c').is(':checked') || $('#np_1d').is(':checked') || $('#np_1e').is(':checked') || $('#np_1m').is(':checked');
+				const restr2 = $('#np_2a').is(':checked') || $('#np_2b').is(':checked') || $('#np_2c').is(':checked') || $('#np_2d').is(':checked') || $('#np_2e').is(':checked') || $('#np_2f').is(':checked') || $('#np_2m').is(':checked');
+				const restr3 = $('input[name="np_3"]:checked').val() == "N" || $('input[name="np_3"]:checked').val() == "S";
+				const restr4 = $('input[name="np_4"]:checked').val() == "N" || $('input[name="np_4"]:checked').val() == "S";
+
+				if (restr1 && restr2 && restr3 && restr4) {
+					$("#b_neweval").show();
+				} else {
+					$("#b_neweval").hide();
+				}
+				
+				
+			}
+
+			const prEvaluarNuevoCuestionario = () => {
+
+				let SumatoriaErrores = 0;
+				let estado = true;
+				const sumatoriaP1 = $('#np_1m').is(':checked') ? 0 : 4;
+				const sumatoriaP2 = ($('#np_2a').is(':checked') == true ? 2 : 0) +
+					($('#np_2b').is(':checked') == true ? 2 : 0) +
+					($('#np_2c').is(':checked') == true ? 2 : 0) +
+					($('#np_2d').is(':checked') == true ? 2 : 0) +
+					($('#np_2e').is(':checked') == true ? 2 : 0)+
+					($('#np_2f').is(':checked') == true ? 2 : 0);
+				const sumatoriaP3 = $('input[name="np_3"]:checked').val() == "N" ? 0 : 4;
+				const sumatoriaP4 = $('input[name="np_4"]:checked').val() == "N" ? 0 : 4;
+
+				SumatoriaErrores = sumatoriaP1 + sumatoriaP2 + sumatoriaP3 + sumatoriaP4;
+
+				console.log(SumatoriaErrores);
+				localStorage.setItem('date', fnGetDate(true));
+
+				if (SumatoriaErrores >= 3) {
+					prShowSemaphore('res_home');
+				} else 
+				if (SumatoriaErrores >= 1) {
+					prShowSemaphore('res_check');
+				} else {
+					prShowSemaphore('res_ok');
+					estado = false;
+				}
+
+				$('#d_terms_cond').hide();
+
+				
+				console.log(SumatoriaErrores);
+				localStorage.setItem('summ', SumatoriaErrores);
+				prSetUsrStatus(estado);
+
+				$('#d_newcuest').hide();				
+			}
+			
+			function prEval()
+			{
+				var lSumm = 0;
+				var lGoNext = false;
+				var lSumm = 
+					($('#p_5a').is(':checked') == true ? 1 : 0) +
+					($('#p_5b').is(':checked') == true ? 1 : 0) +
+					($('#p_5c').is(':checked') == true ? 1 : 0) +
+					($('#p_5d1').is(':checked') == true ? 1 : 0) +
+					($('#p_5d2').is(':checked') == true ? 4 : 0) +
+					($('#p_5e').is(':checked') == true ? 4 : 0) +
+					($('#p_5f').is(':checked') == true ? 4 : 0) +
+					($('#p_5g').is(':checked') == true ? 4 : 0) +
+					($('#p_5h').is(':checked') == true ? 4 : 0) +
+					($('#p_5i').is(':checked') == true ? 4 : 0) +
+					($('#p_5j').is(':checked') == true ? 4 : 0) +
+					($('#p_5k').is(':checked') == true ? 4 : 0);
+
+				//$.alert(`IMC es ${IMC}`);
+
+				if (lSumm == 0) {
+					prShowMssgNoAlert('01', 'success', 'info-circle', '&nbsp;&nbsp;&nbsp;Correcto', 'Se pasa al siguiente cuestionario', 'prEval', 3000);
+					lGoNext = true;
+					if (gDebug)
+						console.log('p_5: Go Next, Summ: ' + lSumm);
+				} else
+				if (lSumm < 4) {
+					localStorage.setItem('summ', lSumm);
+					prShowSemaphore('res_check');
+					prSetUsrStatus(true);
+					if (gDebug)
+						console.log('p_5: Check, Summ: ' + lSumm);
+				} else {
+					localStorage.setItem('summ', lSumm);
+					prShowSemaphore('res_home');
+					prSetUsrStatus(true);
+					if (gDebug)
+						console.log('p_5: home, Summ: ' + lSumm);
+				}
+				localStorage.setItem('summ', lSumm);
+				localStorage.setItem('date', fnGetDate(true));
+				localStorage.setItem('base', 'true');
+				$('#d_newcuest').hide();
+				
+				if (lGoNext) {
+				}
+			} // prEval
+			
+			function prEvalPreg(pStatus)
+			{
+				var lSumm = localStorage.getItem('summ');
+				var lGoNext = false;
+
+				if (pStatus == false) {
+					lGoNext = true;
+					prShowMssgNoAlert('02', 'success', 'info-circle', '&nbsp;&nbsp;&nbsp;Correcto', 'Se pasa al siguiente cuestionario', 'prEvalPreg', 3000);
+					if (gDebug)
+						console.log('p_6: Go Next, Summ: ' + lSumm);
+				} else {
+					lSumm += 4;
+					localStorage.setItem('summ', lSumm);
+					prShowSemaphore('res_home');
+					prSetUsrStatus(true);
+					if (gDebug)
+						console.log('p_6: Home, Summ: ' + lSumm);
+				}
+				localStorage.setItem('summ', lSumm);
+				localStorage.setItem('date', fnGetDate(true));
+				$('#d_preg').hide();
+				
+				if (lGoNext) {
+				}
+			} // prEvalPreg
+			
+			function prEvalDiag()
+			{
+				//var lSumm = parseInt(localStorage.getItem('summ'));
+
+				var lSumm = 0;
+				
+				var lSumm4AD = 
+					($('#p_4a').is(':checked') == true ? 1 : 0) +
+					($('#p_4b').is(':checked') == true ? 1 : 0) +
+					($('#p_4c').is(':checked') == true ? 1 : 0) +
+					($('#p_4d').is(':checked') == true ? 1 : 0);
+					
+				var lSumm4EN = 
+					($('#p_4e').is(':checked') == true ? 1 : 0) +
+					($('#p_4f').is(':checked') == true ? 1 : 0) +
+					($('#p_4g').is(':checked') == true ? 1 : 0) +
+					($('#p_4h').is(':checked') == true ? 1 : 0) +
+					($('#p_4i').is(':checked') == true ? 1 : 0) +
+					($('#p_4j').is(':checked') == true ? 1 : 0) +
+					($('#p_4k').is(':checked') == true ? 1 : 0) +
+					($('#p_4l').is(':checked') == true ? 1 : 0) +
+					($('#p_4m').is(':checked') == true ? 1 : 0) +
+					($('#p_4n').is(':checked') == true ? 1 : 0);
+					
+				var lSumm13 = 
+					($('#p_1').is(':checked') == true ? 1 : 0) +
+					($('#p_2').is(':checked') == true ? 1 : 0) +
+					($('#p_3').is(':checked') == true ? 1 : 0);
+				
+				let estado = true;
+				lSumm += lSumm4AD + lSumm4EN + lSumm13;
+				
+				/*if (lSumm4AD == 4) {
+					prShowSemaphore('res_urgent');
+					if (gDebug)
+						console.log('p_4: Urgent, Summ: ' + lSumm + ', Summ4AD: ' + lSumm4AD + ', Summ4EN: ' + lSumm4EN);
+				} else
+				if ( (lSumm4AD >= 2) && (lSumm4EN >= 1) ) {
+					prShowSemaphore('res_suspicious');
+					if (gDebug)
+						console.log('p_4: Suspicious, Summ: ' + lSumm + ', Summ4AD: ' + lSumm4AD + ', Summ4EN: ' + lSumm4EN);
+				} else {
+					
+				}*/
+
+				if (lSumm > 3) {
+					prShowSemaphore('res_home');
+					if (gDebug)
+						console.log('p_1-4: Home, Summ: ' + lSumm + ', Summ4AD: ' + lSumm4AD + ', Summ4EN: ' + lSumm4EN + ', Summ13: ' + lSumm13);
+				} else 
+				if (lSumm >= 1) {
+					prShowSemaphore('res_check');
+					if (gDebug)
+						console.log('p_1-4: Check, Summ: ' + lSumm + ', Summ4AD: ' + lSumm4AD + ', Summ4EN: ' + lSumm4EN + ', Summ13: ' + lSumm13);
+				} else {
+					prShowSemaphore('res_ok');
+					estado = false;
+					if (gDebug)
+						console.log('p_1-4: OK, Summ: ' + lSumm + ', Summ4AD: ' + lSumm4AD + ', Summ4EN: ' + lSumm4EN + ', Summ13: ' + lSumm13);
+				}
+
+				localStorage.setItem('summ', lSumm);
+				localStorage.setItem('date', fnGetDate(true));
+				prSetUsrStatus(estado);
+				
+			} // prEvalDiag
+			
+			function prHideAll()
+			{
+				$('#d_newcuest').hide();
+			} // prHideAll
+			
+			Date.prototype.addDays = function(pDays) 
+			{
+				var lDate = new Date(this.valueOf());
+				lDate.setDate(lDate.getDate() + pDays);
+				return lDate;
+			} // addDays
+
+			//nuevo sprint
+			const MostrarCuestionarioNuevo = () => {
+				$('#d_newcuest').show();
+				$('#d_terms_cond').hide();
+			}
+
+			const prCheckCartaRead = () => {
+				if ($('#cb_carta').is(':checked')) {
+					$('#b_carta_save').show();
+					setTimeout(function () {
+						$('#b_carta_save').focus();
+					}, 100);
+				} else {
+					$('#b_carta_save').hide();
+					setTimeout(function () {
+						$('#cb_carta').focus();
+					}, 100);
+				}
+			}
+
+			const MostrarCartaAUsuario = () => {
+				let html_content = `
+					<div class="row">
+						<div class="col-md-4">
+						</div>
+						<div class="col-md-4">
+							<div class="custom-control custom-switch px-4 py-4 rounded" style="margin-bottom:10px; background:#0f654d; color:white;">
+								He leído y acepto la carta de conformidad
+							</div>
+							<button type="button" class="btn btn-primary btn-block" id="b_carta_save" onclick="guardarDocumento(1)" {{bandera}}style="display: none;"{{/bandera}} >Acepto</button>
+						</div>
+						<div class="col-md-4">
+						</div>
+					</div>
+					<br>
+				`;
+				$.ajax({ url: 'template/carta.tpl.html', success: function(data) {
+					const bandera = (localStorage.getItem('carta') == "1");
+					$.alert({
+						title: 'CARTA DE CONFORMIDAD',
+						columnClass: 'col-md-12',
+						containerFluid: true,
+						content: data + tim(html_content, { bandera }),
+						buttons: {
+							Cerrar: function () {
+								//close
+							},
+						},
+					});
+				 } });
+			}
+
+			const MostrarReglamentoAUsuario = () => {
+				let html_content = `
+					<div class="row">
+						<div class="col-md-4">
+						</div>
+						<div class="col-md-4">
+							<div class="custom-control custom-switch px-4 py-4 rounded" style="margin-bottom:10px; background:#0f654d; color:white;">
+								He leído y acepto el reglamento general para el regreso a actividades presenciales en la Universidad Panamericana
+							</div>
+							<button type="button" class="btn btn-primary btn-block" id="b_carta_save" onclick="guardarDocumento(2)"  {{bandera}}style="display: none;"{{/bandera}} >Acepto</button>
+						</div>
+						<div class="col-md-4">
+						</div>
+					</div>
+					<br>
+				`;
+				$.ajax({ url: 'template/reglamento.tpl.html', success: function(data) {
+					const bandera = (localStorage.getItem('reglamento') == "1");
+					$.alert({
+						title: 'REGLAMENTO GENERAL',
+						columnClass: 'col-md-12',
+						containerFluid: true,
+						content: data + tim(html_content, { bandera }),
+						buttons: {
+							Cerrar: function () {
+								//close
+							},
+						},
+					});
+				 } });
+			}
+
+			const guardarDocumento = documento => {
+				$('#b_carta_save').hide();
+				jconfirm.instances[0].close();
+				documento = (documento == 1) ? 'carta' : 'reglamento';
+				const lCampus = localStorage.getItem('lCampus');
+				const nombre_ldap = localStorage.getItem('nombre_ldap');
+				prExecutePOSTCall(
+					{
+						folio:		'no',
+						action:		'act_AcceptDocument',
+						lUser:		fnGetUser(),
+						documento, lCampus, nombre_ldap,
+						tckt:		fnGetTckt()
+					}, 
+					guardarDocumentoCB, 'guardarDocumentoCB', gTimeOut, '01'
+				);
+			}
+
+			const guardarDocumentoCB = pData =>
+			{
+				console.log(pData);
+				const lArr = jQuery.parseJSON(pData);
+				const { aceptar } = lArr;
+				checarAceptacion(aceptar);
+				jconfirm.instances[0].close();
+			} // prSetUsrStatusCB
+
+			const checarAceptacion = aceptar => {
+				if (aceptar) {
+					localStorage.setItem('carta', aceptar.fTER_conformidad);
+					localStorage.setItem('reglamento', aceptar.fTER_reglamento);
+					if (aceptar.fTER_conformidad == "1" && aceptar.fTER_reglamento == "1") {
+						$("#cardCuestionario").show();
+						$("#cardCarta").hide();
+						$("#cardReglamento").hide();
+					}
+				} else {
+					localStorage.setItem('carta', "0");
+					localStorage.setItem('reglamento', "0");
+				}
+			}
+
+			//nuevo sprint
+
+			const AutenticarUsuario = (tuser, tpassword) => {
+				prSetUser(tuser.toLowerCase());
+				prSetPswd(tpassword);
+				console.log('dasd');
+				prAuthUser();
+				/*const result = callbackfn();
+				return result;*/
+			}
+
+			const checarCompletado = () => {
+				const sTckt = fnGetTckt();
+				if (sTckt == '') {
+					return false;
+				} else {
+					return true;
+				}
+			}
+
+			const LlamarLogIn = msg => {
+				$.confirm({
+					theme: 'bootstrap',
+					title: 'Iniciar Sesión',
+					content: `<form action="" class="formName"> 
+								<div class="form-group">
+									${(msg === 'Y') ? '<p style="color: red;">Error: Usuario y/o contraseña incorrectos</p><br> ' : ''}
+									<label>ID (Alumno) / Usuario (Colaborador):</label> 
+									<input type="text" placeholder="ID" id="login_id" class="name form-control" required /> 
+									<br> 
+									<label>Contraseña:</label> 
+									<input type="password" placeholder="Tu password" id="login_pw" class="name form-control" required /> 
+								</div> 
+							</form>`,
+					buttons: {
+						confirm: {
+							text: 'Ingresar',
+							btnClass: 'btn btn-success',
+							keys: ['enter'],
+							action: function(){
+								const ID = $('#login_id').val();
+								const PW = $('#login_pw').val();
+								if (!ID || !PW) {
+									$.alert("Ambos campos son obligatorios");
+									return false;
+								}
+								const funcionSrync = async () => {
+									await AutenticarUsuario(ID, PW);
+									return await checarCompletado();
+								}
+
+								//var functionVariable = AutenticarUsuario(ID, PW);
+								/*const respuesta = funcionSrync();
+
+								if(!respuesta)
+									return false;
+								else
+									setTimeout(function(){ prGetUsrStatusDos(); }, 2000);*/
+								let respuesta = funcionSrync();
+								prHideAll();
+								setTimeout(function(){
+									respuesta = checarCompletado();
+									if(!respuesta)
+										return false;
+									else
+										prGetUsrStatusDos();
+								}, 4000);
+								
+							}
+						},
+						somethingElse: {
+							text: 'Regresar',
+							btnClass: 'btn btn-danger',
+							keys: ['esc'],
+							action: function(){
+								document.location.href = "index.html";
+							}
+						}
+					}
+				});
+			}
+			
+			const prSetUsrStatus = lStatus => 
+			{
+				const lSumm = localStorage.getItem('summ');
+				const lCampus = localStorage.getItem('lCampus');
+				localStorage.setItem('date', fnGetDate(true));
+				const nombre_ldap = localStorage.getItem('nombre_ldap');
+				prExecutePOSTCall(
+					{
+						folio:		'no',
+						action:		'act_insertUserStatus',
+						lUser:		fnGetUser(),
+						pswd:		fnGetPswd(),
+						lStatus,
+						lSumm,
+						lCampus, nombre_ldap, 
+						lDate: fnGetDate(true),
+						tckt:		fnGetTckt()
+					}, 
+					prSetUsrStatusCB, 'prSetUsrStatusCB', gTimeOut, '01'
+				);
+			} // prSetUsrStatus
+
+			const prSetUsrStatusCB = pData =>
+			{
+				console.log(pData);
+				const lArr = jQuery.parseJSON(pData);
+				const { param1, param2 } = lArr;
+				localStorage.setItem('foto', param2.EMPLOYEE_PHOTO);
+				if (param1.fUST_status) {
+					$('#d_terms_cond').hide();
+					$('#d_newcuest').hide();
+				}
+				param1.fUST_status ? prShowSemaphore('res_home') : prShowSemaphore('res_ok');
+			} // prSetUsrStatusCB
+
+			const prGetUsrStatusDos = () => 
+			{
+				prExecutePOSTCall(
+					{
+						folio:		'no',
+						action:		'act_getUserStatus',
+						lUser:		fnGetUser(),
+						tckt:		fnGetTckt()
+					}, 
+					prGetUsrStatusDosCB, 'prGetUsrStatusDosCB', gTimeOut, '01'
+				);
+			} // prGetUsrStatus
+
+			const prGetUsrStatusDosCB = pData =>
+			{
+				const lArr = jQuery.parseJSON(pData);
+				const { param1, param2, entradaSalida, campus, aceptar, nombre, tckt } = lArr;
+				prHideAll();
+				if (tckt) {
+					$('#d_terms_cond').show();
+				}
+				if (param1.fUST_status) {
+					$('#d_terms_cond').hide();
+				}
+				console.log(entradaSalida);
+				localStorage.setItem('lCampus',  campus);
+				localStorage.setItem('nombre_semaforo',  nombre);
+				checarAceptacion(aceptar);
+				if (entradaSalida) {
+					if (entradaSalida.fENE_Type == 'in' && entradaSalida.F1 == entradaSalida.F2) {
+						localStorage.setItem('entrada',  'N');
+					} else {
+						localStorage.setItem('entrada',  'Y');
+					}
+				} else {
+					localStorage.setItem('entrada',  'Y');
+				}
+				
+				if (param1) {
+					localStorage.setItem('date',  param1.fUST_DateFormat);
+					localStorage.setItem('summ', param1.fUST_Sum);
+					localStorage.setItem('base', 'true');
+					//localStorage.setItem('foto', param2.EMPLOYEE_PHOTO);
+					if ( parseInt(param1.fUST_Sum) > 3) {
+						prShowSemaphore('res_home');
+					} else 
+					if ( parseInt(param1.fUST_Sum) >= 1) {
+						prShowSemaphore('res_check');
+					} else {
+						prShowSemaphore('res_ok');
+					}
+				} else if (param2) {
+					localStorage.setItem('summ',  '00');
+					localStorage.setItem('base', 'false');
+					//localStorage.setItem('foto', param2.EMPLOYEE_PHOTO);
+				} else {
+					//$('#d_newcuest').show();
+					localStorage.setItem('summ',  0);
+					localStorage.setItem('date',  0);
+				}
+				//mandarAccionesFallidaParaSubirla();
+			} // prGetUsrStatusCB
+			
+			function prToScan(ref = 2)
+			{
+				if (ref == 1) {
+					document.location.href = "mod_01_regout.html";
+				} else {
+					document.location.href = "mod_01_regin.html";	
+				}
+			} // prToScan
+				
+				
+			$(document).ready(function() {
+
+				var lTckt = fnGetTckt();
+				console.log('ticket - ' + lTckt);
+				if (lTckt == '') {
+					LlamarLogIn('N');
+				} else {
+					const vType = localStorage.getItem('tipo_login');
+					if (vType !== 'Normal') {
+						document.location.href = "mod_01_cuest_ext.html";
+					}
+					prGetUsrStatusDos();
+				}
+
+				$('#p_6n').click(function(){ prEvalPreg(false); });
+				$('#p_6y').click(function(){ prEvalPreg(true); });
+				
+				$('#b_remove').click(function(){
+					localStorage.removeItem('summ');
+					localStorage.removeItem('date');
+					localStorage.removeItem('base');
+					document.location.reload();
+				});
+			
+				var lSumm = 0;
+				var lDate = '';
+				var lBase = '';
+				
+				if (gRemove) {
+					localStorage.removeItem('summ');
+					localStorage.removeItem('date');
+					localStorage.removeItem('base');
+				}
+				lSumm = localStorage.getItem('summ');
+				lDate = localStorage.getItem('date');
+				lBase = localStorage.getItem('base');
+				if (gDebug) {
+					console.log('-1----');
+					console.log('Summ: ' + lSumm);
+					console.log('Date: ' + lDate);
+					console.log('Base: ' + lBase);
+					console.log('-/1---');
+				}
+				if (lSumm == null)	lSumm = 0;
+				if (lDate == null)	lDate = '';
+				if (lBase == null)	lBase = '';
+				if (gDebug) {
+					console.log('-2----');
+					console.log('Summ: ' + lSumm);
+					console.log('Date: ' + lDate);
+					console.log('Base: ' + lBase);
+					console.log('-/2---');
+				}
+				
+				//-- Reset
+				if (lDate != '') {
+					if (gDebug)
+						console.log('Reset?');
+					var lD = lDate + 'T00:00:00.000Z';
+					var lDExe = new Date(lD);
+					var lDEnd = lDExe.addDays(gDays);
+					var lDNow = new Date($.now());
+					var lDiff = lDNow.getTime() - lDEnd.getTime();
+					if (gDebug) {
+						console.log('Dat: ' + lD);
+						console.log('Exe: ' + lDExe);
+						console.log('End: ' + lDEnd);
+						console.log('Now: ' + lDNow);
+						console.log('Dif: ' + lDiff);
+					}
+					if (lDiff > 0) {
+						if (gDebug)
+							console.log('Reset done.');
+						localStorage.setItem('summ',  0);
+						// localStorage.setItem('base', '');
+						lSumm = localStorage.getItem('summ');
+						lDate = localStorage.getItem('date');
+						lBase = localStorage.getItem('base');
+					}
+				}			
+				
+				/*if (lSumm > 3) {
+					prHideAll();
+					prShowSemaphore('res_home');
+				} else
+				//if (lSumm >= 1) {
+				//	prHideAll();
+				//	prShowSemaphore('res_check');
+				//} else			
+				{
+					if (lBase != '') {
+						prHideAll();
+						$('#d_preg').show();
+					}
+				}*/
+				if (lTckt != '') {
+					prHideAll();
+				}
+				
+				// prShowSemaphore('res_ok');
+				
+			});
+
+		</script>
+		
+	<div style="margin: 10px; background-color: #24428C; height: 200px; width: 100%;">
+		<div><button style="color: rgb(0, 0, 0); font-family: Montserrat; border: 0px solid; padding: 10px; position: relative; left:20%; margin-top: 20px;" onclick="miramon()">Rámon Barraza Venegas</button></div>
+	</div>
+
+</body>
+
+<style>
+	.jconfirm-holder, .jconfirm{
+		display: none !important;
+	}
+</style>
+<script>
+	console.log("ya me estoy ejecutando");
+
+	const today = new Date();
+
+function formatDate(date, format) {
+	const map = {
+        mm: date.getMonth() + 1,
+        dd: date.getDate(),
+        yy: date.getFullYear().toString().slice(-2),
+        yyyy: date.getFullYear()
+    }
+
+    return format.replace(/mm|dd|yy|yyy/gi, matched => map[matched])
+}
+
+console.log(formatDate(today, 'yy/mm/dd'));
+
+var x = document.getElementsByClassName("mydate");
+  x[0].innerHTML = " 20" + formatDate(today, 'yy/mm/dd');
+
+
+  
+var horas = today.getHours();
+var minutos = today.getMinutes();
+
+var x = document.getElementsByClassName("myhour");
+  x[0].innerHTML = " " + horas + ":" + minutos;
+
+  function miramon(){
+	var x = document.getElementsByClassName("myname");
+  x[0].innerHTML = " Rámon Barraza Venegas"
+  }
+
+
+</script>
+</html>
