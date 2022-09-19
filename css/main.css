@@ -1,0 +1,17 @@
+.myclass {
+  border-radius: 20px
+}
+.mycals {
+  max-width: 40%
+}
+@media (max-width:640px) {
+  .mycals {
+    position: fixed
+  }
+  @media (min-width:1024px) {
+    .mycals {
+      position: fixed
+    }
+  }
+}
+
